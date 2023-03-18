@@ -1,0 +1,6 @@
+export { default as DeviceDesktop } from './DeviceDesktop'
+export { default as Discord } from './Discord'
+export { default as GitHub } from './GitHub'
+export { default as Linkedin } from './Linkedin'
+export { default as MoonStars } from './MoonStars'
+export { default as SunHigh } from './SunHigh'

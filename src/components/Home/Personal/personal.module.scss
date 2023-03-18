@@ -1,0 +1,18 @@
+.wrapper {
+    display: grid;
+    width: 90%;
+    margin-inline: auto;
+    grid-template-columns: 65% auto;
+    gap: 20px;
+    // background: blue;
+}
+
+.personal_info {
+    position: relative;
+    height: 500px;
+    max-width: 650px;
+}
+
+.faqs {
+    // background-color: aqua;
+}

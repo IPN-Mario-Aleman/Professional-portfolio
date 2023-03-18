@@ -1,0 +1,40 @@
+// .tabs:nth-child(1) {
+//     margin-left: 8px;
+// }
+
+// .tabs:nth-child(1) .active {
+//     margin-left: 8px;
+// }
+
+.tabs {
+    height: 44px;
+    /* -webkit-clip-path: polygon(2% 0, 100% 0, 100% 100%, 0 100%, 0 40%); */
+    /* clip-path: polygon(2% 0, 100% 0, 100% 100%, 0 100%, 0 40%); */
+    // -webkit-clip-path: polygon(40% 0%, 85% 0, 100% 12%, 100% 100%, 0 100%, 0 16%);
+    width: 75%;
+    max-width: 360px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    clip-path: polygon(3% 0%, 97% 0, 100% 25%, 100% 100%, 0 100%, 0 25%);
+    position: relative;
+}
+
+.tab_btn {
+    height: 42px;
+    border-radius: 0px;
+    background: rgb(83, 83, 83);
+    position: relative;
+    margin-top: 2px;
+}
+
+.active {
+    background: rgb(var(--complementary));
+    transform: scale(1.15) skew(-8deg);
+    position: relative;
+    z-index: 1;
+}
+
+.active .tab_text {
+    transform: scale(1) skew(8deg);
+}
+

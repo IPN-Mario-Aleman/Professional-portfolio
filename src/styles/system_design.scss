@@ -1,0 +1,224 @@
+@mixin theme-colors($light-theme) {
+  @if $light-theme == 'light' {
+    --background: 255 255 255;
+    --foreground-rgb: 19 19 26;
+    --icons: invert(0);
+    --background-wrap: linear-gradient(207deg, rgb(246, 251, 255) 0%, rgb(232, 232, 232) 100%);
+  } @else {
+    --background: 19 19 26;
+    --foreground-rgb: 255 255 255;
+    --icons: invert(0);
+    --background-wrap: linear-gradient(207deg, rgb(46, 48, 49) 0%, rgb(29, 29, 29) 100%);
+  }
+}
+
+:root[data-theme='light']{
+  /* Themes */
+  @include theme-colors($light-theme: 'light');
+}
+
+:root {
+  /* Themes */
+  @include theme-colors($light-theme: 'dark');
+
+  /* Colors */
+  --primary: 19, 19, 26;
+  --secondary: 116, 99, 244;
+  --tertiary: 255, 58, 243;
+
+  --complementary: 69, 136, 247;
+  --complementary-white: 255, 255, 255;
+  --complementary-black: 18, 18, 18;
+
+
+  /* Fonts sizes */
+  --p-fs-banner: calc(1.2rem + 3.5vw); // aprox 120px
+  --p-fs-display-large: calc(1.875rem + 1.7708vw); // aprox 64px / 36px mobile (30 + 34)
+  --p-fs-display: calc(1.625rem +  .5208vw); // aprox 36px / 30px mobile (26 + 10)
+  --p-fs-healine-large: calc(1.5rem + .3125vw); // aprox 30px / 24px mobile (24 + 6)
+  --p-fs-healine-medium: calc(1.25rem + .2083vw); // aprox 24px / 20px mobile (20 + 4)
+  --p-fs-healine-small: calc(.875rem + .3125vw); // aprox 20px / 16px (14 + 6)
+  --p-fs-body-text: 1rem; // aprox 16px
+  --p-fs-90: 0.875rem; // aprox 14px
+  --p-fs-75: 0.75rem; // aprox 12px
+  --p-fs-50: 0.5rem; // aprox 8px
+
+  /* Spaces */
+  --space-1: 120px;
+  --space-2: 80px;
+  --space-3: 64px;
+  --space-4: 56px;
+  --space-5: 48px;
+  --space-6: 40px;
+  --space-7: 32px;
+  --space-8: 24px;
+  --space-9: 20px;
+  --space-10: 16px;
+  --space-11: 12px;
+  --space-12: 8px;
+  --space-13: 4px;
+
+  /* Shadows */
+  --small-shadow: drop-shadow(0 4px 4px rgb(0 0 0, 10.2%));
+  --normal-shadow: drop-shadow(0 8px 16px rgb(0 0 0, 10.2%));
+  --big-shadow: drop-shadow(0 3px 30px rgb(0 0 0, 30.2%));
+}
+/* General styles */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: rgb(var(--primary-color));
+  font-family: Avenir-Regular;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 14px 0px;
+  height: 46px;
+  // width: 120px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.25s;
+}
+
+// button:hover {
+//   border-color: #646cff;
+// }
+
+button:focus,
+button:focus-visible {
+  // outline: 4px auto -webkit-focus-ring-color;
+  // background-color: rgb(var(--secondary-color));
+}
+
+button:disabled {
+  color: rgba(var(--neutral-white), 0.4);
+}
+
+a {
+  font-size: 20px;
+  color: rgb(var(--primary-color));
+  text-decoration: inherit;
+  cursor: pointer;
+}
+
+a:hover {
+  color: rgb(var(--primary-color), 80%);
+}
+
+li {
+  text-decoration: none;
+  list-style: none;
+}
+
+/******************************
+        Custom properties   
+*******************************/
+
+/* textos */
+.bold {
+  font-weight: bold;
+  font-family: Avenir-Black;
+}
+
+.light {
+  font-weight: 400;
+}
+
+.banner-text {
+  font-size: var(--p-fs-banner);
+  font-family: var(--font-mono);
+}
+
+.xbg-text {
+  font-size: var(--p-fs-display-large);
+}
+
+.bg-text {
+  font-size: var(--p-fs-display);
+}
+
+.md-text {
+  font-size: var(--p-fs-healine-large);
+}
+
+.sm-text {
+  font-size: var(--p-fs-healine-medium);
+}
+
+.xsm-text {
+  font-size: var(--p-fs-healine-small);
+}
+
+/* texts colors */
+
+.white {
+  color: rgb(var(--neutral-white));
+}
+
+.primary {
+  color: rgb(var(--primary-color));
+}
+
+/* buttons */
+.primary_btn {
+  background-color: rgba(var(--complementary));
+  color: rgb(var(--complementary-white));
+  // box-shadow: 0px 10px 16px rgba(199, 121, 255, 0.6);
+  // font-weight: bold;
+}
+
+.primary_btn:disabled {
+  color: rgba(var(--neutral-white), 0.4);
+}
+
+.secondary {
+  background-color: rgb(var(--light-purple));
+  color: rgb(var(--primary-color));
+  box-shadow: 0px 10px 16px rgba(199, 121, 255, 0.6);
+}
+
+.secondary:disabled {
+  color: rgba(var(--primary-color), 0.4);
+}
+
+/* layouts */
+.container {
+  width: 90vw;
+  margin-inline: auto;
+}
+
+// @media screen and (max-width: 1440px) {
+//   .container {
+//     width: calc(100% - 256px);
+//   }
+// }
+
+// @media screen and (max-width: 1024px) {
+//   .container {
+//     width: calc(100% - 240px);
+//   }
+// }
+
+// @media screen and (max-width: 768px) {
+//   .container {
+//     width: calc(100% - 136px);
+//   }
+// }
+
+// @media screen and (max-width: 468px) {
+//   .container {
+//     width: calc(100% - 72px);
+//   }
+// }
