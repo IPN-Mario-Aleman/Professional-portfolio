@@ -1,28 +1,7 @@
+import About from './About'
+import Education from './Education'
+import Skills from './Skills'
 import style from './tab_content.module.scss'
-
-const About = () => {
-  return (
-    <div>
-      About
-    </div>
-  )
-}
-
-const Skills = () => {
-  return (
-    <div>
-      asda
-    </div>
-  )
-}
-
-const Education = () => {
-  return (
-    <div>
-      Educación
-    </div>
-  )
-}
 
 type TabProps = {
     activeTab: number

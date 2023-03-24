@@ -1,18 +1,42 @@
 .wrapper {
     display: grid;
+    grid-template-columns: 65% auto;
     width: 90%;
     margin-inline: auto;
-    grid-template-columns: 65% auto;
+    
     gap: 20px;
     // background: blue;
 }
 
 .personal_info {
     position: relative;
-    height: 500px;
-    max-width: 650px;
+    max-height: 550px;
+    max-width: 750px;
 }
 
-.faqs {
+.contacto {
     // background-color: aqua;
+}
+
+.avatar {
+    width: 100%;
+    height: auto;
+    background-color: aqua;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 70px;
+    }
+
+    // .personal_info {
+    //     position: relative;
+    //     height: 300px;
+    //     max-width: 750px;
+    //     margin-bottom: 50px;
+    // }
 }

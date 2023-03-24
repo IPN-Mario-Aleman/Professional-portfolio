@@ -1,3 +1,5 @@
+import Banner from '@src/components/Banner'
+// import CarouselIcons from '@src/components/Carousel/CarouselIcons'
 import Hero from '@src/components/Home/Hero'
 import Personal from '@src/components/Home/Personal'
 import Layout from '@src/components/layout'
@@ -13,8 +15,10 @@ export default function Home () {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Layout>
+        <Banner />
         <Hero />
         <Personal />
+        {/* <CarouselIcons /> */}
       </Layout>
     </>
   )
