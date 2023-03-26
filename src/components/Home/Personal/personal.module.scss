@@ -1,3 +1,10 @@
+.title {
+    margin-bottom: 40px;
+    font-family: 'Space Mono', monospace;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
 .wrapper {
     display: grid;
     grid-template-columns: 65% auto;

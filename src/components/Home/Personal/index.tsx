@@ -10,10 +10,27 @@ const Personal = () => {
   const handleTabClicked = (idx:number) => {
     setActiveTab(idx)
   }
+  const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+  const matrixLetter = (e:any) => {
+    let iterations = 0
+    const interval = setInterval(() => {
+      e.target.innerText = e.target.innerText.split('')
+        .map((letter: any, index: number) => {
+          if (index < iterations) {
+            return e.target.dataset.value[index]
+          }
+          return letters[Math.floor(Math.random() * 26)]
+        })
+        .join('')
+      if (iterations >= e.target.dataset.value.length) clearInterval(interval)
+      iterations += 1 / 3
+    }, 30)
+  }
   return (
     <div className='container'>
-      <h1>
-        Informacion Personal
+      <h1 className={style.title + ' ' + 'md-text'} data-value='INFORMACION PERSONAL' onMouseOver={(e) => matrixLetter(e)}>
+        INFORMACION PERSONAL
       </h1>
       <div className={style.wrapper}>
         <div className={style.personal_info}>

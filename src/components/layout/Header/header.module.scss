@@ -11,6 +11,7 @@
     // transform: translateY(-200px);
     // transition: translateY(-200px);
     transition: all .6s ease;
+    z-index: 1;
 }
 
 .hide {
@@ -18,8 +19,9 @@
 }
 
 .scrolled {
-    background-color: rgb(var(--neutral-white), 1);
-    box-shadow: 0px 10px 16px rgba(199, 121, 255, 0.6);
+    // background: rgba(var(--complementary-white), 10%);
+    background-color: rgba(31,32,35,.8);
+    // box-shadow: 0px 10px 16px rgba(var(--secondary), 0.6);
 }
 
 /* wrapper */
