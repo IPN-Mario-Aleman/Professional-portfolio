@@ -1,6 +1,6 @@
 import React from 'react'
 import useEmblaCarousel, { EmblaOptionsType } from 'embla-carousel-react'
-import img from '@public/images/banner/spline.png'
+import img from '@public/images/certificates/frontend-introduction.png'
 import Image from 'next/image'
 import style from './styles.module.scss'
 import Autoplay from 'embla-carousel-autoplay'
@@ -28,9 +28,9 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                   aspectRatio: '16/9'
                 }}
                 src={img}
-                alt='img'
-                height={100}
-                width={200}
+                alt='certificate'
+                height={1920}
+                width={1080}
                 quality={100}
               />
               <br />

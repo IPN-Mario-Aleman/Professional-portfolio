@@ -1,16 +1,82 @@
-import EmblaCarousel from './Carousel'
-import { EmblaOptionsType } from 'embla-carousel-react'
-import style from './styles.module.scss'
+import style from './education.module.scss'
+import { NextJs1, Css3, JavaScript, React, TypeScript, Vite, VsCode } from '@src/components/icons'
+import { GitHub, HTML5 } from '@src/components/icons/IconsSkills'
 
-const OPTIONS: EmblaOptionsType = { loop: true }
-const SLIDE_COUNT = 5
-const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
+const skills = [
+  {
+    percentage: '90%',
+    name: 'HTML5',
+    icon: <HTML5 />
+  },
+  {
+    percentage: '85%',
+    name: 'Css3',
+    icon: <Css3 />
+  },
+  {
+    percentage: '80%',
+    name: 'JavaScript',
+    icon: <JavaScript />
+  },
+  {
+    percentage: '50%',
+    name: 'TypeScript',
+    icon: <TypeScript />
+  },
+  {
+    percentage: '80%',
+    name: 'React',
+    icon: <React />
+  },
+  {
+    percentage: '70%',
+    name: 'Next JS',
+    icon: <NextJs1 />
+  },
+  {
+    percentage: '60%',
+    name: 'Vite',
+    icon: <Vite />
+  },
+  {
+    percentage: '80%',
+    name: 'GitHub',
+    icon: <GitHub />
+  },
+  {
+    percentage: '90%',
+    name: 'Vs Code',
+    icon: <VsCode />
+  }
+]
 
-const Skills = () => {
+const Education = () => {
   return (
-    <section className={style.sandbox__carousel}>
-      <EmblaCarousel slides={SLIDES} options={OPTIONS} />
-    </section>
+    <div className={style.container}>
+      <div className={style.data}>
+        {
+          skills.map((i) => {
+            return (
+              <div className={style.skill} key={i.name}>
+                <div className={style.icon}>
+                  {i.icon}
+                </div>
+                <span className={style.title}>
+                  {i.name}
+                </span>
+                <div className={style.skillbar}>
+                  <span className={style.skillper} style={{ width: `${i.percentage}`, animationDelay: '0.1s' }}>
+                    <span className={style.tooltip}>
+                      {i.percentage}
+                    </span>
+                  </span>
+                </div>
+              </div>
+            )
+          })
+        }
+      </div>
+    </div>
   )
 }
-export default Skills
+export default Education
