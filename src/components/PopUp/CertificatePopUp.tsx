@@ -24,21 +24,23 @@ const CertificatePopUp = () => {
     <AnimatePresence>
       {popUp && (
         <motion.div layoutId={img} className={style.overlay}>
-          <motion.button className={style.closeBtn} onClick={() => closePopUp()} />
-          <motion.div className={style.img_content}>
-            <Image
-              className={style.embla__slide__img}
-              style={{
-                width: '100%',
-                height: 'auto',
-                aspectRatio: '16/9'
-              }}
-              src={img}
-              alt='certificate'
-              height={1920}
-              width={1080}
-              quality={100}
-            />
+          <motion.div className={style.popup_container}>
+            <motion.div className={style.close_section}>
+              <h1 className='xsm-text'>
+                Certifications
+              </h1>
+              <motion.button className={style.closeBtn} onClick={() => closePopUp()} />
+            </motion.div>
+            <motion.div className={style.img_container}>
+              <Image
+                className={style.img_cer}
+                src={img}
+                width={1000}
+                height={1000}
+                alt='certificate'
+                quality={100}
+              />
+            </motion.div>
           </motion.div>
         </motion.div>
       )}
