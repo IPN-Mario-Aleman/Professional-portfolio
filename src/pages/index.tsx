@@ -3,6 +3,7 @@ import Banner from '@src/components/Banner'
 import Hero from '@src/components/Home/Hero'
 import Personal from '@src/components/Home/Personal'
 import Layout from '@src/components/layout'
+import CertificatePopUp from '@src/components/PopUp/CertificatePopUp'
 import Head from 'next/head'
 
 export default function Home () {
@@ -18,6 +19,7 @@ export default function Home () {
         <Banner />
         <Hero />
         <Personal />
+        <CertificatePopUp />
         {/* <CarouselIcons /> */}
       </Layout>
     </>

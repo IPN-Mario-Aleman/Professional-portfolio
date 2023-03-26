@@ -1,0 +1,20 @@
+.overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.566);
+    height: 100%;
+    width: 100%;
+}
+
+.closeBtn {
+    position: fixed;
+    top: 10%;
+    right: 10%;
+    z-index: 10;
+    width: 30px;
+}
+
+.img_content {
+
+}
