@@ -7,15 +7,31 @@
     width: 100%;
     display: grid;
     place-content: center;
+    z-index: 100;
+}
+
+.closePopUp {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.566);
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-content: center;
+    z-index: 100;
 }
 
 .popup_container {
     position: relative;
-    height: 80svh;
+    height: auto;
+    max-height: 80svh;
     width: 80vw;
     background: var(--background-wrap);
     display: flex;
     flex-direction: column;
+    visibility: visible;
+    z-index: 100;
 }
 
 .close_section {
@@ -29,6 +45,10 @@
 
 .closeBtn {
     width: 30px;
+    cursor: pointer;
+    height: 46px;
+    display: grid;
+    place-content: center;
 }
 
 .img_container {

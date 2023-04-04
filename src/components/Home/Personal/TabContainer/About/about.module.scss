@@ -1,6 +1,5 @@
 .tab_wrapper {
     padding: 1.6rem;
-    overflow-y: scroll;
     height: 80%;
 }
 
@@ -8,6 +7,31 @@
     border: 1px solid rgb(var(--border-small));
     background: rgb(var(--bg-small));
     padding: 16px;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+/* width */
+.content::-webkit-scrollbar {
+    width: 10px;
+
+}
+
+/* Track */
+.content::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(49, 49, 49); 
+    border-radius: 10px;
+}
+
+/* Handle */
+.content::-webkit-scrollbar-thumb {
+    background: rgb(var(--complementary)); 
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+.content::-webkit-scrollbar-thumb:hover {
+    background: rgb(var(--complementary), 90%); 
 }
 
 .description {

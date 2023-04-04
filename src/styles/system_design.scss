@@ -8,6 +8,9 @@
     --card-info-back: rgb(213, 213, 213);
     --border-light: 227, 227, 227;
     --bg-small: 243 246 247;
+
+    /* color text gradients */
+    --gradient-title: -webkit-linear-gradient(180deg, #000000, #131313);
     
   } @else {
     --background: 19 19 26;
@@ -18,6 +21,9 @@
     --card-info-back: rgb(57, 57, 57);
     --border-light: 43, 43, 43;
     --bg-small: 46, 48, 49;
+    
+    /* color text gradients */
+    --gradient-title: -webkit-linear-gradient(180deg, #ffffff, #ededed);
   }
 }
 
@@ -39,6 +45,13 @@
   --complementary-white: 255, 255, 255;
   --complementary-black: 18, 18, 18;
 
+  --background-rgb: 29 30 34;
+
+  --blue-rgb: 33 150 243;
+  --primary-rgb: var(--blue-rgb);
+
+  --blob-color-1: rgb(var(--blue-rgb));
+  --blob-color-2: dodgerblue;
 
   /* Fonts sizes */
   --p-fs-banner: calc(1.2rem + 3.5vw); // aprox 120px

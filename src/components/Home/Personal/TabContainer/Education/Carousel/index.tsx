@@ -1,3 +1,4 @@
+import ZoomArea from '@src/components/icons/ZoomArea'
 import { useBookStore } from '@src/store/bookStore'
 import Autoplay from 'embla-carousel-autoplay'
 import useEmblaCarousel, { EmblaOptionsType } from 'embla-carousel-react'
@@ -29,7 +30,10 @@ const EmblaCarousel = ({ slides, options }: PropType) => {
           <div className={style.embla__container}>
             {slides.map((data, index) => (
               <div className={style.embla__slide} key={index}>
-                <motion.div layoutId={data.title} onClick={() => updatePopUp(true, data.img)}>
+                <div className={style.search_btn} onClick={() => updatePopUp(true, data.img)}>
+                  <ZoomArea />
+                </div>
+                <motion.div layoutId={data.title}>
                   <Image
                     className={style.embla__slide__img}
                     style={{

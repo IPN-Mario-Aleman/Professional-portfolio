@@ -1,5 +1,5 @@
 import style from './education.module.scss'
-import { NextJs1, Css3, JavaScript, React, TypeScript, Vite, VsCode } from '@src/components/icons'
+import { NextJs, Css3, JavaScript, React, TypeScript, Vite, VsCode } from '@src/components/icons'
 import { GitHub, HTML5 } from '@src/components/icons/IconsSkills'
 
 const skills = [
@@ -31,7 +31,7 @@ const skills = [
   {
     percentage: '70%',
     name: 'Next JS',
-    icon: <NextJs1 />
+    icon: <NextJs />
   },
   {
     percentage: '60%',

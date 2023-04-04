@@ -1,8 +1,16 @@
+.section {
+    min-height: 100vh;
+    min-height: 100svh;
+}
+
 .title {
     margin-bottom: 40px;
     font-family: 'Space Mono', monospace;
     letter-spacing: 2px;
     text-align: center;
+    background: var(--gradient-title);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .wrapper {
@@ -21,17 +29,46 @@
     max-width: 750px;
 }
 
-.contacto {
+.contact_wrapper {
     // background-color: aqua;
 }
 
+.avatar_wrapper {
+    display: flex;
+    justify-content: center;
+}
+
 .avatar {
-    width: 100%;
-    height: auto;
+    width: 250px;
+    height: 250px;
     background-color: aqua;
     border-radius: 50%;
     aspect-ratio: 1/1;
 }
+
+.title_description {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.link {
+    margin-bottom: 5px;
+}
+
+.curriculum {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+// .star {
+//     font-size: 30px;
+// }
+
+// .title {
+//     font-size: 16px;
+// }
 
 @media screen and (max-width: 768px) {
     .wrapper {
