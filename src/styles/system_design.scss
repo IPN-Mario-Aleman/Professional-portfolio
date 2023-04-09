@@ -94,7 +94,7 @@ button:disabled {
 }
 
 a {
-  font-size: 20px;
+  font-size: 16px;
   color: rgb(var(--primary-color));
   text-decoration: inherit;
   cursor: pointer;
@@ -193,30 +193,18 @@ details summary::-webkit-details-marker {
 
 /* layouts */
 .container {
-  width: 90vw;
   margin-inline: auto;
+  max-width: var(--max-width);
 }
 
-// @media screen and (max-width: 1440px) {
-//   .container {
-//     width: calc(100% - 256px);
-//   }
-// }
+@media screen and (max-width: 1440px) {
+  .container {
+    width: calc(100% - 256px);
+  }
+}
 
-// @media screen and (max-width: 1024px) {
-//   .container {
-//     width: calc(100% - 240px);
-//   }
-// }
-
-// @media screen and (max-width: 768px) {
-//   .container {
-//     width: calc(100% - 136px);
-//   }
-// }
-
-// @media screen and (max-width: 468px) {
-//   .container {
-//     width: calc(100% - 72px);
-//   }
-// }
+@media screen and (max-width: 1024px) {
+  .container {
+    width: calc(100% - 36px);
+  }
+}

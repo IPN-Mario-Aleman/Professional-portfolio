@@ -95,3 +95,15 @@
         gap: 70px;
     }
 }
+
+
+/* folder container */
+.wrapper {
+    background-image: url('/images/home/folder.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    min-height: 500px;
+    max-height: 80svh;
+    width: 100%;
+    background-color: aqua;
+}

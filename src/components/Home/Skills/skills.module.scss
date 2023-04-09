@@ -1,0 +1,40 @@
+/* container */
+.skill_wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+    gap: 20px;
+}
+
+/* skill card container */
+.skill_card {
+    border-radius: 12px;
+    // light mode
+    border: 1px solid rgb(55, 55, 55);
+    // light mode
+    transition: 0.3s ease all;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.skill_card:hover {
+    // light mode
+    border: 1px solid rgb(203, 203, 203);
+    background-color: #030303;
+    // light mode
+}
+
+/* header */
+.header {
+    text-align: center;
+}
+
+/* icons */
+.icons {
+    filter: grayscale(.5);
+}
+
+.skill_card:hover > .icons {
+    filter: grayscale(0);
+}
