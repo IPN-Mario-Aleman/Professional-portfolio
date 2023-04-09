@@ -1,6 +1,8 @@
 .section {
     min-height: 100vh;
     min-height: 100svh;
+    display: grid;
+    align-items: center;
 }
 
 .title {
@@ -29,10 +31,6 @@
     max-width: 750px;
 }
 
-.contact_wrapper {
-    // background-color: aqua;
-}
-
 .avatar_wrapper {
     display: flex;
     justify-content: center;
@@ -51,8 +49,36 @@
     margin-bottom: 10px;
 }
 
-.link {
-    margin-bottom: 5px;
+.contact_info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.icon {
+    margin-right: 6px;
+}
+
+.email_wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.phone_wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.social_info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.social_link {
+    font-size: var(--p-fs-body-text);
 }
 
 .curriculum {
@@ -62,25 +88,10 @@
     justify-content: center;
 }
 
-// .star {
-//     font-size: 30px;
-// }
-
-// .title {
-//     font-size: 16px;
-// }
-
 @media screen and (max-width: 768px) {
     .wrapper {
         display: grid;
         grid-template-columns: 1fr;
         gap: 70px;
     }
-
-    // .personal_info {
-    //     position: relative;
-    //     height: 300px;
-    //     max-width: 750px;
-    //     margin-bottom: 50px;
-    // }
 }

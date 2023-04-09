@@ -8,8 +8,6 @@
     position: sticky;
     top: 0;
     left: 0;
-    // transform: translateY(-200px);
-    // transition: translateY(-200px);
     transition: all .6s ease;
     z-index: 20;
 }
@@ -19,9 +17,9 @@
 }
 
 .scrolled {
-    // background: rgba(var(--complementary-white), 10%);
     background-color: rgba(31,32,35,.8);
-    // box-shadow: 0px 10px 16px rgba(var(--secondary), 0.6);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
 }
 
 /* wrapper */
@@ -40,6 +38,9 @@
     display: flex;
     flex-direction: row;
     gap: 16px;
+    height: 80px;
+    display: flex;
+    align-items: center;
 }
 
 /* Dropdown */
@@ -130,7 +131,7 @@
 }
 
 .overlay {
-    z-index: 2;
+    z-index: 21;
     left: 0;
     width: 100%;
     height: 100%;
@@ -152,13 +153,12 @@
 }
 
 .drawer {
-    z-index: 3;
+    z-index: 22;
     right: 0;
-    // width: 240px
     width: 300px;
     height: 100%;
     padding: 16px 16px 0;
-    background: rgb(var(--neutral-white), 1);
+    background: rgb(var(--background));
     translate: 100% 0;
     transition: 0.3s;
 }

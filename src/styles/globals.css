@@ -3,13 +3,40 @@
   src: url('/fonts/Anurati-Regular.otf');
 }
 
-
 :root {
+  /* Themes */
+  --background: 253 253 253;
+  --foreground-rgb: 19 19 26;
+  --icons: invert(0);
+  /* themes on sections cards */
+  --background-wrap: linear-gradient(207deg, rgb(246, 251, 255) 0%, rgb(232, 232, 232) 100%);
+  --card-info-back: rgb(213, 213, 213);
+  --border-light: 227, 227, 227;
+  --bg-small: 243 246 247;
+
+  /* color text gradients */
+  --gradient-title: -webkit-linear-gradient(180deg, #000000, #131313);
+  
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: 'Anurati', ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+}
+
+
+:root[data-theme='dark']{
+  --background: 17, 18, 25;
+  --foreground-rgb: 255 255 255;
+  --icons: invert(0);
+  /* themes on sections cards */
+  --background-wrap: linear-gradient(207deg, rgb(46, 48, 49) 0%, rgb(29, 29, 29) 100%);
+  --card-info-back: rgb(57, 57, 57);
+  --border-light: 43, 43, 43;
+  --bg-small: 46, 48, 49;
+  
+  /* color text gradients */
+  --gradient-title: -webkit-linear-gradient(180deg, #ffffff, #ededed);
 }
 
 * {
@@ -26,7 +53,6 @@ body {
 body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background));
-  transition: 0.25s;
 }
 
 a {

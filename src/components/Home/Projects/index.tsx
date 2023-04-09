@@ -8,12 +8,12 @@ const banners = [
   {
     id: 0,
     images: '/images/projects/proyect1.png',
-    alt: 'Buzzy project',
+    alt: 'New Portfolio',
     background: '#020302',
-    titulo: 'Buzzy',
+    titulo: 'Portfolio',
     repo: 'https://github.com/IPN-Mario-Aleman/buzzy_dp',
-    subtitulo: 'Proyecto de la universidad',
-    descipcion: 'Fue un proyecto FullStack con arquitectura monolitica, utilizando express como Backend y siguiendo el patron de diseño MVC (Model, View, Controller); por otra parte el desarrollo del Frontend fue realizado con HTML5 (Pug), CSS3, JavaScript con JQuery.',
+    subtitulo: 'Portfolio Actual',
+    descipcion: 'Este es mi portfolio mas actualizado, utilizando NextJS como framework, aqui encontraras toda la información necesaria para conocerme y saber de mis proyectos.',
     link: ''
   },
   {
@@ -96,9 +96,9 @@ const Projects = () => {
 
   function toogleActiveControlDrag (index: number) {
     if (active.objects[index] === active.activeObject) {
-      return `${style.hero__slide} ${style.control_banner_active}`
+      return ` ${style.control_banner_active} ${style.hero__slide__inner}`
     } else {
-      return `${style.hero__slide} ${style.control_banner_inactive}`
+      return ` ${style.control_banner_inactive} ${style.hero__slide__inner}`
     }
   }
 
@@ -161,12 +161,8 @@ const Projects = () => {
           {banners.map((element, index) => (
             <div key={element.id} className={active.activeObject === null && index === 0 ? `${style.slider} ${style.active}` : toggleActiveStyle(index)}>
               <div className={`${style.project_view} container`}>
-                <motion.div
+                <div
                   className={style.text}
-                  initial={{ opacity: 0, top: -20 }}
-                  whileInView={{ opacity: 1, top: 0 }}
-                  transition={{ duration: 2 }}
-                  viewport={{ once: false }}
                 >
                   <h1 className={`${style.title_slider} bg-text`}>
                     {element.titulo}
@@ -178,11 +174,11 @@ const Projects = () => {
                     {element.descipcion}
                   </p>
                   <button role='button' className={style.btn_proj}>
-                    <a href={element.repo} className={style.btn_text}>
+                    <a href={element.repo} className={style.btn_text} target='_blank' rel='noopener noreferrer'>
                       Ver mas
                     </a>
                   </button>
-                </motion.div>
+                </div>
                 <motion.div
                   className={style.slider_img_container}
                   initial={{ opacity: 0 }}
@@ -201,10 +197,10 @@ const Projects = () => {
                     <div className={style.screen_content}>
                       <i className={`${style.screen_icon} ${style.fa_brands} ${style.fa_codepen}`} />
                       <div className={style.screen_user}>
-                        <span className={style.name} data-value='CODEPEN'>{element.titulo}</span>
+                        <span className={style.name} data-value={element.titulo}>{element.titulo}</span>
                         {
                           element.link?.length > 0 &&
-                            <a className={style.link} href={element.link} target='_blank'>{element.preview}</a>
+                            <a className={style.link} href={element.link} target='_blank' rel='noopener noreferrer'>{element.preview}</a>
                         }
                       </div>
                     </div>
@@ -225,8 +221,8 @@ const Projects = () => {
                     <Image
                       src={element.images}
                       className={style.desktop_control_img}
-                      width={1080}
-                      height={1920}
+                      width={1920}
+                      height={1080}
                       alt={element.alt}
                     />
                   </div>
@@ -244,15 +240,22 @@ const Projects = () => {
           <div className={style.hero__carousel__viewport} ref={viewportRef}>
             <div className={style.hero__carousel__container}>
               {banners.map((element, index) => (
-                <div onClick={() => { heroControls(index) }} className={active.activeObject === null && index === 0 ? `${style.hero__slide} ${style.control_banner_active}` : toogleActiveControlDrag(index)} key={index}>
-                  <div className={style.hero__slide__inner}>
-                    <Image
-                      className={style.hero__slide__img}
-                      width={1080}
-                      height={1920}
-                      src={element.images}
-                      alt={element.alt}
-                    />
+                <div onClick={() => { heroControls(index) }} className={style.hero__slide} key={index}>
+                  <div className={active.activeObject === null && index === 0 ? `${style.hero__slide} ${style.control_banner_active} ${style.hero__slide__inner}` : toogleActiveControlDrag(index)}>
+                    <figure>
+                      <div className={style.container_controler_img}>
+                        <Image
+                          className={style.desktop_control_img}
+                          width={720}
+                          height={460}
+                          src={element.images}
+                          alt={element.alt}
+                        />
+                      </div>
+                      <figcaption className={style.title_control}>
+                        {element.titulo}
+                      </figcaption>
+                    </figure>
                   </div>
                 </div>
               ))}

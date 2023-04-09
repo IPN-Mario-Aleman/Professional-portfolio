@@ -5,49 +5,54 @@ interface props {
 }
 
 type ThemeContextType = {
-    theme: string | null
+    theme: string | null | undefined
     toggleTheme: () => void
 }
 
 const ThemeContext = createContext<ThemeContextType | null>(null)
 
 const ThemeProvider = ({ children }:props) => {
-  const [theme, setTheme] = useState<string>('')
+  // const [darkTheme, setDarkTheme] = useState<boolean | undefined>(undefined)
 
-  /* Se actualiza el theme del primer renderizado busca primero si tiene un selección actual en el localStorage
-    si no busca la del sistema.
-  */
+  // const handleToggle = useCallback(() => {
+  //   darkTheme === true
+  //     ? setDarkTheme(false)
+  //     : setDarkTheme(true)
+  // }, [darkTheme])
+  // // const handleToggle = useCallback(darkMode: boolean) => {
+  // //   setDarkTheme(darkMode)
+  // // }
+
+  const [theme, setTheme] = useState<string | undefined>(undefined)
+
+  const storeUserSetPreference = (pref: string) => {
+    localStorage.setItem('theme', pref)
+  }
 
   useEffect(() => {
-    const ThemeStorage = localStorage.getItem('theme')
-    const root = document.querySelector<HTMLElement>(':root')!
-
-    if (ThemeStorage !== null) {
-      setTheme('light')
-    } else {
-      const runColorMode = (fn: any) => {
-        if (!window.matchMedia) {
-          return
-        }
-
-        const query = window.matchMedia('(prefers-color-scheme: dark)')
-
-        fn(query.matches)
-
-        query.addEventListener('change', (event) => fn(event.matches))
-      }
-
-      runColorMode((isDarkMode: boolean) => {
-        if (isDarkMode) {
-          setTheme('dark')
-          root.setAttribute('data-theme', 'dark')
-        } else {
-          setTheme('light')
-          root.setAttribute('data-theme', 'light')
-        }
-      })
-    }
+    const root = document.documentElement
+    const initialColorValue = root.style.getPropertyValue(
+      '--initial-color-mode'
+    )
+    console.log('valor inicial', initialColorValue)
+    initialColorValue === 'dark'
+      ? setTheme('dark')
+      : setTheme('light')
   }, [])
+
+  useEffect(() => {
+    const root = document.documentElement
+
+    if (theme !== undefined) {
+      if (theme === 'dark') {
+        root.setAttribute('data-theme', 'dark')
+        storeUserSetPreference('dark')
+      } else {
+        root.setAttribute('data-theme', 'light')
+        storeUserSetPreference('light')
+      }
+    }
+  }, [theme])
 
   const toggleTheme = useCallback(() => {
     theme === 'light'
@@ -58,6 +63,7 @@ const ThemeProvider = ({ children }:props) => {
   const handleTheme = (theme: string) => {
     const root = document.querySelector<HTMLElement>(':root')!
     root.setAttribute('data-theme', theme)
+    storeUserSetPreference(theme)
   }
 
   useEffect(() => {
@@ -66,6 +72,7 @@ const ThemeProvider = ({ children }:props) => {
     } else {
       handleTheme('dark')
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [theme])
 
   const value = useMemo<ThemeContextType>(() => ({ theme, toggleTheme }), [theme, toggleTheme])

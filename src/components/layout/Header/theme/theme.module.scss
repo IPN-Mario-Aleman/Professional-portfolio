@@ -1,0 +1,49 @@
+.menu {
+  filter: drop-shadow(1px 1px 1px #5116a9);
+  width: 120px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: rgb(var(--background));
+  width: 300px;
+  position: absolute;
+}
+
+.item {
+  color: rgb(var(--background));
+  display: block;
+  transform-origin: -20px 50%;
+}
+
+.list,
+.item {
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+}
+
+.btn_theme {
+  -webkit-appearance: button;
+  background: rgb(var(--background));
+  color: rgb(var(--foreground-rgb));
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn_theme path {
+  fill: rgb(var(--background));
+}
+

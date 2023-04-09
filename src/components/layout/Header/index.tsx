@@ -1,18 +1,16 @@
 import useScrollDirection from '@hooks/useScrollDirection'
-import DeviceDesktop from '@src/components/icons/DeviceDesktop'
 import { Discord, GitHub, Linkedin } from '@src/components/icons/'
+import DeviceDesktop from '@src/components/icons/DeviceDesktop'
 import MoonStars from '@src/components/icons/MoonStars'
 import SunHigh from '@src/components/icons/SunHigh'
-import { useI18N } from '@src/context/i18n'
 import { useTheme } from '@src/context/ThemeContext'
+import { useI18N } from '@src/context/i18n'
+import { t } from '@src/models/i18n'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import style from './header.module.scss'
-import { t } from '@src/models/i18n'
-// import hamburger from '../../../../../../images/GENERAL/BURGUER.svg'
-// import logo from '../../../../../../images/GENERAL/ZAKI_LOGO_GRIS.svg'
-// import close from '../../../../../../images/GENERAL/Cerrar.svg'
+import ThemeMenu from './theme'
 
 interface drawerProps {
   isOpen: boolean
@@ -88,71 +86,81 @@ const Header = () => {
   }
 
   return (
-    <header className={style.header + ' ' + `${scrollDirection === 'down' ? style.hide : style.show}` + ' ' + `${scrolled ? style.scrolled : ''}`}>
-      <div className={'container' + ' ' + style.wrapper}>
-        <div className='logo'>
-          <Link href='/'>
-            <GitHub />
-            <Discord />
-            <Linkedin />
-          </Link>
+    <>
+      <header className={style.header + ' ' + `${scrollDirection === 'down' ? style.hide : style.show}` + ' ' + `${scrolled ? style.scrolled : ''}`}>
+        <div className={'container' + ' ' + style.wrapper}>
+          <div className='logo'>
+            <Link href='/'>
+              <GitHub />
+              <Discord />
+              <Linkedin />
+            </Link>
+          </div>
+          <nav className={style.navigation}>
+            <ul className={style.links}>
+              <li><Link className='bold' href='/'>Inicio</Link></li>
+              <li>
+                <div className={style.dropdown}>
+                  <MoonStars />
+                  <div className={style.menu}>
+                    <a className={style.menu_item} href='#' onClick={toggleTheme}>
+                      <SunHigh />
+                      Light
+                    </a>
+                    <a className={style.menu_item} href='#' onClick={toggleTheme}>
+                      <MoonStars />
+                      Dark
+                    </a>
+                    <a className={style.menu_item} href='#' onClick={toggleTheme}>
+                      <DeviceDesktop />
+                      System
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <ThemeMenu />
+              </li>
+              <li>
+                <div className={style.dropdown}>
+                  <h1 style={{ fontSize: '20px' }}>
+                    Idioma
+                  </h1>
+                  <div className={style.menu}>
+                    <a
+                      className={style.menu_item}
+                      href=''
+                      onClick={() => handleLanguage('es')}
+                    >
+                      Español
+                    </a>
+                    <a
+                      className={style.menu_item}
+                      href='/en'
+                      onClick={() => handleLanguage('en')}
+                    >
+                      Ingles
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li><Link className='bold' href='/'>{t('Project')}</Link></li>
+              <li><Link className='bold' href='/'>{t('Contact-Me')}</Link></li>
+            </ul>
+          </nav>
+          <button className={style.img_wrapper} onClick={openDrawer}>
+            <svg xmlns='http://www.w3.org/2000/svg' className='icon icon-tabler icon-tabler-menu-2' width='24' height='24' viewBox='0 0 24 24' strokeWidth='2' stroke='currentColor' fill='none' strokeLinecap='round' strokeLinejoin='round'>
+              <path stroke='none' d='M0 0h24v24H0z' fill='none' />
+              <path d='M4 6l16 0' />
+              <path d='M4 12l16 0' />
+              <path d='M4 18l16 0' />
+            </svg>
+          </button>
         </div>
-        <nav className={style.navigation}>
-          <ul className={style.links}>
-            <li><Link className='bold' href='/'>Inicio</Link></li>
-            <li>
-              <div className={style.dropdown}>
-                <MoonStars />
-                <div className={style.menu}>
-                  <a className={style.menu_item} href='#' onClick={toggleTheme}>
-                    <SunHigh />
-                    Light
-                  </a>
-                  <a className={style.menu_item} href='#' onClick={toggleTheme}>
-                    <MoonStars />
-                    Dark
-                  </a>
-                  <a className={style.menu_item} href='#' onClick={toggleTheme}>
-                    <DeviceDesktop />
-                    System
-                  </a>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div className={style.dropdown}>
-                <h1 style={{ fontSize: '20px' }}>
-                  Idioma
-                </h1>
-                <div className={style.menu}>
-                  <a
-                    className={style.menu_item}
-                    href=''
-                    onClick={() => handleLanguage('es')}
-                  >
-                    Español
-                  </a>
-                  <a
-                    className={style.menu_item}
-                    href='/en'
-                    onClick={() => handleLanguage('en')}
-                  >
-                    Ingles
-                  </a>
-                </div>
-              </div>
-            </li>
-            <li><Link className='bold' href='/'>{t('Project')}</Link></li>
-            <li><Link className='bold' href='/'>{t('Contact-Me')}</Link></li>
-          </ul>
-        </nav>
-        <button className={style.img_wrapper} onClick={openDrawer}>
-          {/* <img className={style.hamburger} src={hamburger} alt='hamburguer' /> */}
-        </button>
-        <Overlay isOpen={isOpen} setIsOpen={setIsOpen} />
-        <Drawer isOpen={isOpen} setIsOpen={setIsOpen} />
-      </div>
-    </header>
+      </header>
+      <Overlay isOpen={isOpen} setIsOpen={setIsOpen} />
+      <Drawer isOpen={isOpen} setIsOpen={setIsOpen} />
+    </>
   )
 }
 
