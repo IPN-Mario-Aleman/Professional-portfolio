@@ -111,13 +111,13 @@ export const Vite = () => {
     >
       <defs>
         <linearGradient id='IconifyId181a1aae180e65c622682' x1='-.828%' x2='57.636%' y1='7.652%' y2='78.411%'>
-          <stop offset='0%' stop-color='#41D1FF' />
-          <stop offset='100%' stop-color='#BD34FE' />
+          <stop offset='0%' stopColor='#41D1FF' />
+          <stop offset='100%' stopColor='#BD34FE' />
         </linearGradient>
         <linearGradient id='IconifyId181a1aae180e65c622683' x1='43.376%' x2='50.316%' y1='2.242%' y2='89.03%'>
-          <stop offset='0%' stop-color='#FFEA83' />
-          <stop offset='8.333%' stop-color='#FFDD35' />
-          <stop offset='100%' stop-color='#FFA800' />
+          <stop offset='0%' stopColor='#FFEA83' />
+          <stop offset='8.333%' stopColor='#FFDD35' />
+          <stop offset='100%' stopColor='#FFA800' />
         </linearGradient>
       </defs>
       <path

@@ -98,12 +98,73 @@
 
 
 /* folder container */
-.wrapper {
-    background-image: url('/images/home/folder.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    min-height: 500px;
-    max-height: 80svh;
-    width: 100%;
-    background-color: aqua;
+.info_personal {
+    // height: 80svh;
+    // min-height: 500px;
+    // max-height: 550px;
+    position: relative;
 }
+
+.wrapper_container {
+    // position: relative;
+    // top: 7%;
+    // left: -1%;
+}
+
+/* folder design */
+.folder {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    z-index: -10;
+}
+
+/* second paper effect */
+.slider {
+    margin: 26px auto 0;
+    max-width: 550px;
+    min-height: 300px;
+    position: relative;
+    width: 100%;
+}
+.letter {
+    background: #ededed;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    margin: 26px auto 0;
+    max-width: 550px;
+    min-height: 300px;
+    padding: 24px;
+    position: relative;
+    width: 100%;
+    color: #000;
+}
+.letter p {
+    color: #000;
+}
+.paper_back, .paper_back2 {
+    content: "";
+    height: 98%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+.paper_back {
+    background: #969696;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    left: -5px;
+    top: 4px;
+    transform: rotate(-2.5deg);
+}
+.paper_back2 {
+    background: #616161;
+    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+    right: -3px;
+    top: 1px;
+    transform: rotate(1.4deg);
+}
+
+

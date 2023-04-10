@@ -1,4 +1,5 @@
 import Banner from '@src/components/Banner'
+import Experience from '@src/components/Home/Experience'
 // import CarouselIcons from '@src/components/Carousel/CarouselIcons'
 import Hero from '@src/components/Home/Hero'
 import Personal from '@src/components/Home/Personal'
@@ -22,6 +23,7 @@ export default function Home () {
         <Hero />
         <Personal />
         <Skills />
+        <Experience />
         {/* <Projects /> */}
         <CertificatePopUp />
         {/* <CarouselIcons /> */}

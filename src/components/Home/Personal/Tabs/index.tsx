@@ -1,32 +1,34 @@
-import style from './tab.module.scss'
+// import style from './tab.module.scss'
+import { useState } from 'react'
+import { initialTabs as tabs } from './tabs'
+import { motion, AnimatePresence } from 'framer-motion'
+import AboutMe from '../TabContainer/AboutMe'
+import ContactMe from '../TabContainer/ContactMe'
 
-const tabs = ['Educacion', 'Skills', 'Acerca de']
-
-type NavProps = {
-    activeTap: number
-    onTabClicked: (tab: number) => void
-}
-
-const Nav = ({ activeTap, onTabClicked }: NavProps) => {
+const Nav = () => {
+  const [selectedTab, setSelectedTab] = useState(tabs[0])
   return (
-    <header className={style.tabs}>
-      {
-        tabs.map((tab, idx) => (
-          <button
-            key={tab}
-            type='button'
-            onClick={() => onTabClicked(idx)}
-            className={
-                activeTap === idx ? style.tab_btn + ' ' + style.active + ' ' + 'primary_btn' : style.tab_btn + ' ' + 'primary_btn'
-              }
-          >
-            <p className={style.tab_text}>
-              {tab}
-            </p>
-          </button>
-        ))
-      }
-    </header>
+    <>
+      <AnimatePresence mode='wait'>
+        <motion.div
+          key={selectedTab ? selectedTab.label : 'empty'}
+          initial={{ x: 30, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{ x: -30, opacity: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          {selectedTab.label === 'About Me'
+            ? <AboutMe
+                selectedTab={selectedTab}
+                setSelectedTab={setSelectedTab}
+              />
+            : <ContactMe
+                selectedTab={selectedTab}
+                setSelectedTab={setSelectedTab}
+              />}
+        </motion.div>
+      </AnimatePresence>
+    </>
   )
 }
 
