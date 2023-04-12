@@ -3,17 +3,17 @@ export interface Tabs {
     label: string;
 }
 
-export const allIngredients = [
-  { icon: '🍅', label: 'About Me' },
-  { icon: '🥬', label: 'Contact Me' }
+export const allInformation = [
+  { icon: '💻', label: 'About Me' },
+  { icon: '📱', label: 'Contact Me' }
 ]
 
-const [tomato, lettuce] = allIngredients
-export const initialTabs = [tomato, lettuce]
+const [about, contact] = allInformation
+export const initialTabs = [about, contact]
 
 export function getNextIngredient (
-  ingredients: Tabs[]
+  info: Tabs[]
 ): Tabs | undefined {
-  const existing = new Set(ingredients)
-  return allIngredients.find((ingredient) => !existing.has(ingredient))
+  const existing = new Set(info)
+  return allInformation.find((info) => !existing.has(info))
 }

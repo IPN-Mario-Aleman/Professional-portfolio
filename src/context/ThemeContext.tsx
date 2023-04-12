@@ -34,7 +34,6 @@ const ThemeProvider = ({ children }:props) => {
     const initialColorValue = root.style.getPropertyValue(
       '--initial-color-mode'
     )
-    console.log('valor inicial', initialColorValue)
     initialColorValue === 'dark'
       ? setTheme('dark')
       : setTheme('light')

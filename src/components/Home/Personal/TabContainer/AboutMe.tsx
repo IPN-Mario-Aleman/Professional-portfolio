@@ -14,7 +14,6 @@ type TabControls = {
 }
 
 const AboutMe = ({ selectedTab, setSelectedTab }: TabControls) => {
-  console.log(selectedTab, setSelectedTab)
   return (
     <div className={style.letter}>
       <div className={style.content}>

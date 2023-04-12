@@ -26,7 +26,7 @@
 
 
 :root[data-theme='dark']{
-  --background: 17, 18, 25;
+  --background: 25, 25, 25;
   --foreground-rgb: 255 255 255;
   --icons: invert(0);
   /* themes on sections cards */

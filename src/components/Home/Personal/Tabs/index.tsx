@@ -1,4 +1,3 @@
-// import style from './tab.module.scss'
 import { useState } from 'react'
 import { initialTabs as tabs } from './tabs'
 import { motion, AnimatePresence } from 'framer-motion'

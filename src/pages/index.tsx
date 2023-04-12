@@ -2,6 +2,7 @@ import Banner from '@src/components/Banner'
 import Experience from '@src/components/Home/Experience'
 // import CarouselIcons from '@src/components/Carousel/CarouselIcons'
 import Hero from '@src/components/Home/Hero'
+import LastProject from '@src/components/Home/LastProject'
 import Personal from '@src/components/Home/Personal'
 import Projects from '@src/components/Home/Projects'
 import Skills from '@src/components/Home/Skills'
@@ -24,6 +25,7 @@ export default function Home () {
         <Personal />
         <Skills />
         <Experience />
+        <LastProject />
         {/* <Projects /> */}
         <CertificatePopUp />
         {/* <CarouselIcons /> */}
