@@ -194,18 +194,7 @@ details summary::-webkit-details-marker {
 /* layouts */
 .container {
   margin-inline: auto;
+  width: calc(100% - 36px);
   max-width: var(--max-width);
   padding: 50px 0;
-}
-
-@media screen and (max-width: 1440px) {
-  .container {
-    width: calc(100% - 256px);
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  .container {
-    width: calc(100% - 36px);
-  }
 }

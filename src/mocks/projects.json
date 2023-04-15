@@ -1,0 +1,61 @@
+{
+    "projects": [
+        {
+            "id": 0,
+            "name": "Portfolio Professional",
+            "url": "https://professional-portfolio-phi.vercel.app",
+            "repo": "https://github.com/IPN-Mario-Aleman/Professional-portfolio",
+            "images": "/images/projects/proyect1.png",
+            "alt": "New Portfolio",
+            "descipcion": "Este es mi portfolio mas actualizado, utilizando NextJS como framework, aqui encontraras toda la información necesaria para conocerme y saber de mis proyectos.",
+            "background": "#020302",
+            "subtitulo": "Portfolio Actual"
+
+        },
+        {
+            "id": 1,
+            "images": "/images/projects/proyect1.png",
+            "alt": "Buzzy project",
+            "background": "#020302",
+            "titulo": "Buzzy",
+            "repo": "https://github.com/IPN-Mario-Aleman/buzzy_dp",
+            "subtitulo": "Proyecto de la universidad",
+            "descipcion": "Fue un proyecto FullStack con arquitectura monolitica, utilizando express como Backend y siguiendo el patron de diseño MVC (Model, View, Controller); por otra parte el desarrollo del Frontend fue realizado con HTML5 (Pug), CSS3, JavaScript con JQuery.",
+            "link": ""
+        },
+        {
+            "id": 2,
+            "images": "/images/projects/giffy_project.png",
+            "alt": "Giffy project",
+            "background": "#020302",
+            "titulo": "Giffy",
+            "repo": "https://github.com/IPN-Mario-Aleman/React-with-MiduDev",
+            "subtitulo": "Curso de React JS",
+            "descipcion": "Principios basicos de react, con create-react-app; con conceptos como: uso de hooks basicos (useState, useEffect, useRef, etc), manejo de CEO, Consumo de la API de Giphy y deploy con vercel.",
+            "link": "https://giffy-two-indol.vercel.app",
+            "preview": "Giffy preview"
+        },
+        {
+            "id": 3,
+            "images": "/images/projects/sample_portfolio.png",
+            "alt": "Portfolio Meta",
+            "background": "#020302",
+            "control": "control_banner",
+            "titulo": "Portfolio",
+            "subtitulo": "Ejemplo de portfolio curso Meta",
+            "descipcion": "Pequeño portfolio basado del curso de React de Meta, donde se pusieron en practica los conocimientos de validaciones de formularios, desarrollo responsive, HOC (High order component), etc.",
+            "link": ""
+        },
+        {
+            "id": 4,
+            "images": "/images/projects/simple_calculator.png",
+            "alt": "Calculator",
+            "background": "#020302",
+            "control": "control_banner",
+            "titulo": "Calculadora",
+            "subtitulo": "Calculadora del curso Meta",
+            "descipcion": "Esta calculadora realiza operaciones muy básicas como suma, resta, división y multiplicación utilizando los hooks de React.",
+            "link": ""
+        }
+    ]
+}

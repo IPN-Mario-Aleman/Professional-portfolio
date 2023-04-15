@@ -144,7 +144,7 @@ const Header = () => {
                   </div>
                 </div>
               </li>
-              <li><Link className='bold' href='/'>{t('Project')}</Link></li>
+              <li><Link className='bold' href='/projects'>{t('Project')}</Link></li>
               <li><Link className='bold' href='/'>{t('Contact-Me')}</Link></li>
             </ul>
           </nav>
