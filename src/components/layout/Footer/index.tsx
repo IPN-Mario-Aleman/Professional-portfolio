@@ -21,9 +21,9 @@ const iconsMedia = [
 
 export async function getStaticProps () {
   const version = new Date()
-  const day = 3
-  const month = 'abril'
-  const year = 2023
+  const day = version.getDay()
+  const month = version.getMonth()
+  const year = version.getFullYear()
 
   return {
     props: { day, month, year } // will be passed to the page component as props
@@ -31,9 +31,9 @@ export async function getStaticProps () {
 }
 
 interface version {
-  day: number
-  month: string;
-  year: number;
+  day?: number
+  month?: string;
+  year?: number;
 }
 
 const Footer = ({ day, month, year }: version) => {
