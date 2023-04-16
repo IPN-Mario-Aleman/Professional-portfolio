@@ -21,9 +21,9 @@ const iconsMedia = [
 
 export async function getStaticProps () {
   const version = new Date()
-  const day = version.getDay()
-  const month = version.getMonth()
-  const year = version.getFullYear()
+  const day = 3
+  const month = 'abril'
+  const year = 2023
 
   return {
     props: { day, month, year } // will be passed to the page component as props
