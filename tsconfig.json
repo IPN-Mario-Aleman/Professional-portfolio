@@ -19,7 +19,11 @@
       "@hooks/*": ["./src/hooks/*"],
       "@components/*": ["./src/components/*"],
       "@public/*": ["./public/*"],
-      "@store/*": ["./src/store/*"]
+      "@store/*": ["./src/store/*"],
+      "@mocks/*": ["./src/mocks/*"],
+      "@models/*": ["./src/models/*"],
+      "@context/*": ["./src/context/*"]
+
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

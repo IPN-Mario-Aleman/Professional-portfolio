@@ -1,6 +1,5 @@
 import { Discord, GitHub, Linkedin } from '@src/components/icons'
 import style from './footer.module.scss'
-// import logo from '../../../../../../images/GENERAL/ZAKI_Logo_Blanco.svg'
 
 const iconsMedia = [
   {
@@ -20,7 +19,24 @@ const iconsMedia = [
   }
 ]
 
-const Footer = () => {
+export async function getStaticProps () {
+  const version = new Date()
+  const day = version.getDay()
+  const month = version.getMonth()
+  const year = version.getFullYear()
+
+  return {
+    props: { day, month, year } // will be passed to the page component as props
+  }
+}
+
+interface version {
+  day: number
+  month: string;
+  year: number;
+}
+
+const Footer = ({ day, month, year }: version) => {
   return (
     <footer className={style.footer}>
       <div className={'container' + ' ' + style.wrapper}>
@@ -39,7 +55,7 @@ const Footer = () => {
           }
         </div>
         <p className={style.last_update}>
-          Última actualización: 03 de abril de 2023
+          Última actualización: {day} de {month} de {year}
         </p>
       </div>
     </footer>

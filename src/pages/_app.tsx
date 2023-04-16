@@ -1,3 +1,4 @@
+import FiltersProvider from '@src/context/filters'
 import I18NProvider from '@src/context/i18n'
 import ThemeProvider from '@src/context/ThemeContext'
 import '@src/styles/globals.css'
@@ -16,15 +17,17 @@ export default function App ({ Component, pageProps }: AppProps) {
   return (
     <I18NProvider>
       <ThemeProvider>
-        <style jsx global>
-          {`
+        <FiltersProvider>
+          <style jsx global>
+            {`
             html {
               font-family: ${assistant.style.fontFamily};
               overflow-x: hidden;
             }
-          `}
-        </style>
-        <Component {...pageProps} />
+            `}
+          </style>
+          <Component {...pageProps} />
+        </FiltersProvider>
       </ThemeProvider>
     </I18NProvider>
   )

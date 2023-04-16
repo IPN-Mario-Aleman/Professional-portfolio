@@ -25,6 +25,7 @@
     "zustand": "^4.3.6"
   },
   "devDependencies": {
+    "lottie-react": "^2.4.0",
     "sass": "^1.59.2",
     "standard": "^17.0.0"
   }
