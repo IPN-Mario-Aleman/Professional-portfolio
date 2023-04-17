@@ -17,7 +17,7 @@ const Banner = () => {
         </video> */}
         {/* <div className={style.background} /> */}
         {/* <Sparkles /> */}
-        <Image className={style.banner_img} src={theme === 'dark' ? space : spacewhite} height={1920} width={1080} alt='Space Banner' quality={100} priority />
+        <Image className={style.banner_img} src={theme === 'dark' ? space : spacewhite} height={1920} width={1080} alt='Space Banner' quality={100} />
       </div>
     </div>
   )
