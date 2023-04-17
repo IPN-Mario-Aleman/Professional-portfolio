@@ -22,7 +22,6 @@ export default function App ({ Component, pageProps }: AppProps) {
             {`
             html {
               font-family: ${assistant.style.fontFamily};
-              overflow-x: hidden;
             }
             `}
           </style>

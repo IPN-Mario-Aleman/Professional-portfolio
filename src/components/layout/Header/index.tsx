@@ -42,9 +42,9 @@ const Drawer = ({ isOpen, setIsOpen }: drawerProps) => {
       {/* <Image className={style.close_btn} src={close} alt='Close button' onClick={closeDrawer} /> */}
       <nav className={style.nav_drw}>
         <ul className={style.links_drw}>
-          <li><Link className='bold' href='/'>Inicio</Link></li>
-          <li><Link className='bold' href='/projects'>{t('Project')}</Link></li>
-          <li><Link className='bold' href='/'>{t('Contact-Me')}</Link></li>
+          <li><Link className='bold' href='/' onClick={closeDrawer}>Inicio</Link></li>
+          <li><Link className='bold' href='/projects' onClick={closeDrawer}>{t('Project')}</Link></li>
+          <li><Link className='bold' href='/' onClick={closeDrawer}>{t('Contact-Me')}</Link></li>
         </ul>
       </nav>
     </div>
