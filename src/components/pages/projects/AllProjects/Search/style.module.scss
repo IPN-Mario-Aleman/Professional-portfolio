@@ -91,3 +91,9 @@
   transform: scale(1);
   transition: 0s;
 }
+
+@media screen and (max-width: 998px) {
+  .form {
+    width: 100%;
+  }
+}

@@ -1,11 +1,16 @@
+export { default as Close } from './Close';
 export { default as DeviceDesktop } from './DeviceDesktop';
 export { default as Discord } from './Discord';
 export { default as GitHub } from './GitHub';
 export * from './IconsSkills';
+export { default as Language } from './Language';
 export { default as Linkedin } from './Linkedin';
+export { default as Logo } from './Logo';
+export { default as LogoAlt } from './LogoAlt';
 export { default as MoonStars } from './MoonStars';
 export { default as Search } from './Search';
 export * from './Star';
 export { default as SunHigh } from './SunHigh';
 export { default as Vercel } from './Vercel';
+export { default as ZoomArea } from './ZoomArea';
 export * from './index';

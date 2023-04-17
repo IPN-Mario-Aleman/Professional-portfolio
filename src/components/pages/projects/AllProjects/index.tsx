@@ -28,7 +28,7 @@ const Projects = ({ projects }: DataType) => {
       <div className={style.wrapper}>
         <div className={style.filter_wrapp}>
           <div className={style.sticky}>
-            <h1>Filtrar proyectos</h1>
+            <h1 className={style.search_title}>Filtrar proyectos</h1>
             <Search />
           </div>
         </div>

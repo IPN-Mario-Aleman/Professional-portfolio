@@ -1,15 +1,12 @@
 import useScrollDirection from '@hooks/useScrollDirection'
-import { Discord, GitHub, Linkedin } from '@src/components/icons/'
-import DeviceDesktop from '@src/components/icons/DeviceDesktop'
-import MoonStars from '@src/components/icons/MoonStars'
-import SunHigh from '@src/components/icons/SunHigh'
-import { useTheme } from '@src/context/ThemeContext'
+import { GitHub, Linkedin, LogoAlt } from '@src/components/icons/'
 import { useI18N } from '@src/context/i18n'
 import { t } from '@src/models/i18n'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import style from './header.module.scss'
+import LanguageMenu from './lang'
 import ThemeMenu from './theme'
 
 interface drawerProps {
@@ -32,6 +29,7 @@ const Overlay = ({ setIsOpen, isOpen }: drawerProps) => {
 }
 
 const Drawer = ({ isOpen, setIsOpen }: drawerProps) => {
+  const { t }: t = useI18N()
   const closeDrawer = () => {
     setIsOpen(false)
     // Enable Scrolling when Drawer/Modal is closed
@@ -45,11 +43,9 @@ const Drawer = ({ isOpen, setIsOpen }: drawerProps) => {
       <nav className={style.nav_drw}>
         <ul className={style.links_drw}>
           <li><Link className='bold' href='/'>Inicio</Link></li>
-          <li><Link className='bold' href='/#quees'>¿Qué es ZAKI?</Link></li>
-          <li><Link className='bold' href='/#como'>¿Como lo obtengo?</Link></li>
-          <li><Link className='bold' href='/faq'>FAQ</Link></li>
+          <li><Link className='bold' href='/projects'>{t('Project')}</Link></li>
+          <li><Link className='bold' href='/'>{t('Contact-Me')}</Link></li>
         </ul>
-        <button className='primary' style={{ marginTop: '32px', width: '100%' }}>Ingresa</button>
       </nav>
     </div>
   )
@@ -71,13 +67,8 @@ const Header = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const handleLanguage = (value: string) => {
-    localStorage.setItem('i18n', value)
-  }
-
-  const { toggleTheme } = useTheme()
   const [isOpen, setIsOpen] = useState<drawerProps['isOpen']>(false)
-  const { scrollDirection, scrolled } = useScrollDirection()
+  const { scrolled } = useScrollDirection()
 
   const openDrawer = () => {
     setIsOpen(!isOpen)
@@ -87,65 +78,31 @@ const Header = () => {
 
   return (
     <>
-      <header className={style.header + ' ' + `${scrollDirection === 'down' ? style.hide : style.show}` + ' ' + `${scrolled ? style.scrolled : ''}`}>
-        <div className={'container' + ' ' + style.wrapper}>
-          <div className='logo'>
+      <header className={style.header + ' ' + `${scrolled ? style.scrolled : ''}`}>
+        <div className={style.wrapper}>
+          <div className={style.logo}>
             <Link href='/'>
-              <GitHub />
-              <Discord />
-              <Linkedin />
+              <LogoAlt />
             </Link>
           </div>
           <nav className={style.navigation}>
             <ul className={style.links}>
               <li><Link className='bold' href='/'>Inicio</Link></li>
-              <li>
-                <div className={style.dropdown}>
-                  <MoonStars />
-                  <div className={style.menu}>
-                    <a className={style.menu_item} href='#' onClick={toggleTheme}>
-                      <SunHigh />
-                      Light
-                    </a>
-                    <a className={style.menu_item} href='#' onClick={toggleTheme}>
-                      <MoonStars />
-                      Dark
-                    </a>
-                    <a className={style.menu_item} href='#' onClick={toggleTheme}>
-                      <DeviceDesktop />
-                      System
-                    </a>
-                  </div>
-                </div>
-              </li>
+              <li><Link className='bold' href='/projects'>{t('Project')}</Link></li>
+              <li><Link className='bold' href='/'>{t('Contact-Me')}</Link></li>
+              <span className={style.divider} />
               <li>
                 <ThemeMenu />
               </li>
               <li>
-                <div className={style.dropdown}>
-                  <h1 style={{ fontSize: '20px' }}>
-                    Idioma
-                  </h1>
-                  <div className={style.menu}>
-                    <a
-                      className={style.menu_item}
-                      href=''
-                      onClick={() => handleLanguage('es')}
-                    >
-                      Español
-                    </a>
-                    <a
-                      className={style.menu_item}
-                      href='/en'
-                      onClick={() => handleLanguage('en')}
-                    >
-                      Ingles
-                    </a>
-                  </div>
-                </div>
+                <LanguageMenu />
               </li>
-              <li><Link className='bold' href='/projects'>{t('Project')}</Link></li>
-              <li><Link className='bold' href='/'>{t('Contact-Me')}</Link></li>
+              <li style={{ display: 'grid', placeContent: 'center' }}>
+                <GitHub />
+              </li>
+              <li style={{ display: 'grid', placeContent: 'center' }}>
+                <Linkedin />
+              </li>
             </ul>
           </nav>
           <button className={style.img_wrapper} onClick={openDrawer}>

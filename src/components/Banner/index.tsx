@@ -6,21 +6,21 @@ import { useTheme } from '@src/context/ThemeContext'
 import videoBg from '@public/video/forets.mp4'
 import { useEffect, useState } from 'react'
 
-// const Sparkles = () => {
-//   return (
-//     <>
-//       {
-//       [...Array(100)].map((x, i) => {
-//         return (
-//           <div className={style.firefly} key={i}>
-//             {/* <div className={style.firefly} /> */}
-//           </div>
-//         )
-//       })
-//       }
-//     </>
-//   )
-// }
+const Sparkles = () => {
+  return (
+    <>
+      {
+      [...Array(100)].map((x, i) => {
+        return (
+          <div className={style.firefly} key={i}>
+            {/* <div className={style.firefly} /> */}
+          </div>
+        )
+      })
+      }
+    </>
+  )
+}
 
 const Banner = () => {
   const { theme } = useTheme()
@@ -44,6 +44,7 @@ const Banner = () => {
           <source src='./video/ToTheMoon.mp4' type='video/mp4' />
         </video> */}
         <div className={style.background} />
+        <Sparkles />
         {/* <Image className={style.banner_img} src={theme === 'dark' ? space : spacewhite} height={1920} width={1080} alt='Space Banner' quality={100} priority /> */}
       </div>
     </div>

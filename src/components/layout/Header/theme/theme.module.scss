@@ -1,6 +1,6 @@
 .menu {
-  filter: drop-shadow(1px 1px 1px #5116a9);
-  width: 120px;
+  cursor: pointer;
+  position: relative;
 }
 
 .list {
@@ -8,42 +8,44 @@
   flex-direction: column;
   gap: 10px;
   background: rgb(var(--background));
-  width: 300px;
+  border: 1px solid rgb(42, 42, 42);
+  width: 148px;
   position: absolute;
+  right: -50%;
+  top: 150%;
+  border-radius: 10px;
 }
 
 .item {
-  color: rgb(var(--background));
+  color: rgb(var(--foreground-rgb));
   display: block;
   transform-origin: -20px 50%;
+}
+
+.item:hover {
+  background: #1e1e1e;
 }
 
 .list,
 .item {
   list-style: none;
   margin: 0;
-  padding: 10px;
+  padding: 10px 0;
+}
+
+.content_item {
+  padding: 0 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  font-size: 18px;
 }
 
 .btn_theme {
-  -webkit-appearance: button;
-  background: rgb(var(--background));
-  color: rgb(var(--foreground-rgb));
-  border: none;
-  border-radius: 10px;
-  padding: 10px 20px;
-  font-size: 18px;
-  font-weight: 700;
-  cursor: pointer;
-  width: 100%;
-  text-align: left;
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  place-content: center;
 }
 
 .btn_theme path {
   fill: rgb(var(--background));
 }
-

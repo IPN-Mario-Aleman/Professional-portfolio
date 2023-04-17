@@ -8,6 +8,7 @@
   --background: 253, 253, 253;
   --foreground-rgb: 19, 19, 26;
   --border-opacity: 0.2;
+  --blur-header: hsla(0,0%,100%,.8);
   --icons: invert(0);
   /* themes on sections cards */
   --background-wrap: linear-gradient(207deg, rgb(246, 251, 255) 0%, rgb(232, 232, 232) 100%);
@@ -30,6 +31,7 @@
   --background: 13, 13, 13;
   --foreground-rgb: 255, 255, 255;
   --border-opacity: 0.2;
+  --blur-header: hsla(0, 0%, 5%, 0.8);
   --icons: invert(0);
   /* themes on sections cards */
   --background-wrap: linear-gradient(207deg, rgb(46, 48, 49) 0%, rgb(29, 29, 29) 100%);

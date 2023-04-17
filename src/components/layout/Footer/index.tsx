@@ -19,24 +19,7 @@ const iconsMedia = [
   }
 ]
 
-export async function getStaticProps () {
-  const version = new Date()
-  const day = version.getDay()
-  const month = version.getMonth()
-  const year = version.getFullYear()
-
-  return {
-    props: { day, month, year } // will be passed to the page component as props
-  }
-}
-
-interface version {
-  day?: number
-  month?: string;
-  year?: number;
-}
-
-const Footer = ({ day, month, year }: version) => {
+const Footer = () => {
   return (
     <footer className={style.footer}>
       <div className={'container' + ' ' + style.wrapper}>
@@ -55,7 +38,7 @@ const Footer = ({ day, month, year }: version) => {
           }
         </div>
         <p className={style.last_update}>
-          Última actualización: {day} de {month} de {year}
+          Última actualización: 16 de Abril de 2023
         </p>
       </div>
     </footer>

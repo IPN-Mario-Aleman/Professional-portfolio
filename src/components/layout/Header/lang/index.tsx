@@ -1,8 +1,7 @@
-import { DeviceDesktop, MoonStars, SunHigh } from '@src/components/icons'
-import { useTheme } from '@src/context/ThemeContext'
-import { motion, stagger, useAnimate } from 'framer-motion'
-import { useEffect, useState } from 'react'
-import style from './theme.module.scss'
+import style from './lang.module.scss'
+import { useState, useEffect } from 'react'
+import { useAnimate, stagger, motion } from 'framer-motion'
+import { Language } from '@src/components/icons'
 
 const staggerMenuItems = stagger(0.1, { startDelay: 0.15 })
 
@@ -10,6 +9,8 @@ function useMenuAnimation (isOpen: boolean) {
   const [scope, animate] = useAnimate()
 
   useEffect(() => {
+    // animate('.arrow', { rotate: isOpen ? 180 : 0 }, { duration: 0.2 })
+
     animate(
       'ul',
       {
@@ -40,10 +41,12 @@ function useMenuAnimation (isOpen: boolean) {
   return scope
 }
 
-const ThemeMenu = () => {
+const LanguageMenu = () => {
   const [isOpen, setIsOpen] = useState(false)
   const scope = useMenuAnimation(isOpen)
-  const { theme, toggleTheme } = useTheme()
+  const handleLanguage = (value: string) => {
+    localStorage.setItem('i18n', value)
+  }
 
   return (
     <nav className={style.menu} ref={scope}>
@@ -53,11 +56,7 @@ const ThemeMenu = () => {
         onClick={() => setIsOpen(!isOpen)}
         className={style.btn_theme}
       >
-        {
-          theme === 'dark'
-            ? <MoonStars active />
-            : <SunHigh active />
-        }
+        <Language />
       </motion.div>
       <ul
         className={style.list}
@@ -66,27 +65,27 @@ const ThemeMenu = () => {
           clipPath: 'inset(10% 50% 90% 50% round 10px)'
         }}
       >
-        <li className={style.item} onClick={toggleTheme}>
-          <div className={style.content_item}>
-            <SunHigh />
-            Light
-          </div>
+        <li className={style.item}>
+          <a
+            className={style.menu_item}
+            href=''
+            onClick={() => handleLanguage('es')}
+          >
+            Español
+          </a>
         </li>
-        <li className={style.item} onClick={toggleTheme}>
-          <div className={style.content_item}>
-            <MoonStars />
-            Dark
-          </div>
-        </li>
-        <li className={style.item} onClick={toggleTheme}>
-          <div className={style.content_item}>
-            <DeviceDesktop />
-            System
-          </div>
+        <li className={style.item}>
+          <a
+            className={style.menu_item}
+            href='/en'
+            onClick={() => handleLanguage('en')}
+          >
+            Ingles
+          </a>
         </li>
       </ul>{' '}
     </nav>
   )
 }
 
-export default ThemeMenu
+export default LanguageMenu

@@ -1,0 +1,39 @@
+.menu {
+    cursor: pointer;
+    position: relative;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: rgb(var(--background));
+    border: 1px solid rgb(42, 42, 42);
+    width: 148px;
+    position: absolute;
+    right: -50%;
+    top: 150%;
+    border-radius: 10px;
+}
+
+.item {
+    color: rgb(var(--foreground-rgb));
+    display: block;
+    transform-origin: -20px 50%;
+}
+
+.list,
+.item {
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+}
+
+.btn_theme {
+    display: grid;
+    place-content: center;
+}
+
+.btn_theme path {
+    fill: rgb(var(--background));
+}

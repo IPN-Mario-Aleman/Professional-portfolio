@@ -17,15 +17,23 @@
 }
 
 .scrolled {
-    background-color: rgba(31,32,35,.8);
-    backdrop-filter: blur( 4px );
-    -webkit-backdrop-filter: blur( 4px );
+    background: var(--blur-header);
+    backdrop-filter: saturate(180%) blur(5px);
+    -webkit-backdrop-filter: blur( 5px );
 }
 
 /* wrapper */
 .wrapper {
     display: flex;
     justify-content: space-between;
+    margin-inline: auto;
+    width: calc(100% - 36px);
+    max-width: var(--max-width);
+}
+
+.logo {
+    display: grid;
+    place-content: center;
 }
 
 /* navigation menu */
@@ -38,9 +46,12 @@
     display: flex;
     flex-direction: row;
     gap: 16px;
-    height: 80px;
-    display: flex;
     align-items: center;
+}
+
+.divider {
+    border-left: 1px solid rgb(255, 255, 255, .2);
+    height: 20px;
 }
 
 /* Dropdown */
