@@ -1,0 +1,128 @@
+.wrapp_works {
+    overflow: hidden;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.gradient {
+    background-image: var(--gradients);
+    background-clip: text;
+    color: transparent;
+}
+
+.text_exp {
+    padding: 20px 0;
+    font-size: 20px;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+/* time working section */
+.research {
+    position: relative;
+}
+
+.blob_1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 150px;
+    border-radius: 100%;
+    background-image: linear-gradient(#ff0400 10%, #ff3700);
+    filter: blur(200px);
+    transition: all 450ms ease-out;
+    position: absolute;
+    pointer-events: none;
+    left: 0;
+    bottom: 100px;
+    transform: translate(calc(-50% + 15px), -50%);
+    z-index: -1;
+}
+
+.blob_2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 150px;
+    border-radius: 100%;
+    background-image: linear-gradient(#000dff 10%, #5100ff);
+    filter: blur(200px);
+    transition: all 450ms ease-out;
+    position: absolute;
+    pointer-events: none;
+    right: 0;
+    bottom: 100px;
+    transform: translate(calc(-50% + 15px), -50%);
+    z-index: -1;
+}
+
+.box {
+    max-width: 150px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(227, 227, 227, 0.25);
+    flex: 1 1 auto;
+    text-align: center;
+    font-size: var(--p-fs-display);
+    position: relative;
+}
+
+.box > p {
+    font-size: 18px;
+}
+
+/* display all jobs */
+.jobs_box {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, .15);
+}
+
+.jobs_box:last-child {
+    border-bottom: none;
+}
+
+.subtitle {
+    margin-bottom: var(--space-7);
+    color: var(--accents-7);
+}
+
+.places {
+    display: grid;
+    place-content: center;
+    padding: 0 50px;
+}
+
+.number {
+    font-size: 50px;
+}
+
+.head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-11);
+}
+
+/* repsonsive styles boxes */
+
+@media screen and (max-width: 969px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+    }
+    .blob1,
+    .blob_2 {
+        bottom: -200px;
+    }
+}
+    

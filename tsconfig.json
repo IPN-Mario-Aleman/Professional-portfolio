@@ -23,7 +23,6 @@
       "@mocks/*": ["./src/mocks/*"],
       "@models/*": ["./src/models/*"],
       "@context/*": ["./src/context/*"]
-
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

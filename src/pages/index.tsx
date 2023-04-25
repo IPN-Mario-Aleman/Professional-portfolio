@@ -2,7 +2,7 @@ import Head from 'next/head'
 import dynamic from 'next/dynamic'
 const Layout = dynamic(() => import('@src/components/layout'))
 
-const Experience = dynamic(() => import('@src/components/Home/Experience'))
+const Work = dynamic(() => import('@src/components/Home/Work'))
 const Hero = dynamic(() => import('@src/components/Home/Hero'))
 const LastProject = dynamic(() => import('@src/components/Home/LastProject'))
 const Personal = dynamic(() => import('@src/components/Home/Personal'))
@@ -24,7 +24,7 @@ export default function Home () {
         <Hero />
         <Personal />
         <Skills />
-        <Experience />
+        <Work />
         <LastProject />
         <CertificatePopUp />
       </Layout>

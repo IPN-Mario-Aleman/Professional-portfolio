@@ -18,6 +18,18 @@
 
   /* color text gradients */
   --gradient-title: -webkit-linear-gradient(180deg, #000000, #131313);
+
+  /* Texts colors */
+  --accents-8: #111;
+  --accents-7: #333;
+  --accents-6: #444;
+  --accents-5: #666;
+  --accents-4: #888;
+  --accents-3: #999;
+  --accents-2: #eaeaea;
+  --accents-1: #fafafa;
+
+  --gradients: linear-gradient(60deg, #101010, #595959);
   
   --max-width: 1200px;
   --border-radius: 12px;
@@ -42,6 +54,18 @@
   
   /* color text gradients */
   --gradient-title: -webkit-linear-gradient(180deg, #ffffff, #ededed);
+
+  /* Texts colors */
+  --accents-8: #fafafa;
+  --accents-7: #dcdcdc;
+  --accents-6: #999;
+  --accents-5: #888;
+  --accents-4: #666;
+  --accents-3: #444;
+  --accents-2: #333;
+  --accents-1: #111;
+
+  --gradients: linear-gradient(60deg, #e9e9e9, #c8c8c8);
 }
 
 * {
