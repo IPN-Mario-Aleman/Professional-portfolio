@@ -1,9 +1,5 @@
 /* intersection observer hook */
 import { useInView } from 'react-intersection-observer'
-// motion
-import { motion } from 'framer-motion'
-// Animation
-import { fadeIn } from '@src/utils/variants'
 // Count Up
 import CountUp from 'react-countup'
 
@@ -30,9 +26,9 @@ const Work = () => {
           <div className={style.text_exp}>
             <div className={style.box}>
               {
-            inView &&
-              <CountUp start={0} end={2} duration={2} />
-          }
+                inView &&
+                  <CountUp start={0} end={2} duration={2} />
+              }
               <p>
                 Años de
                 experiencia
@@ -40,18 +36,18 @@ const Work = () => {
             </div>
             <div className={style.box}>
               {
-            inView &&
-              <CountUp start={0} end={2} duration={2} />
-          }
+                inView &&
+                  <CountUp start={0} end={2} duration={2} />
+              }
               <p>
                 Empresas
               </p>
             </div>
             <div className={style.box}>
               {
-            inView &&
-              <CountUp start={0} end={15} duration={2} />
-          }
+                inView &&
+                  <CountUp start={0} end={15} duration={2} />
+              }
               +
               <p>
                 Proyectos
@@ -60,11 +56,7 @@ const Work = () => {
           </div>
         </div>
         {/* all works */}
-        <motion.div
-          variants={fadeIn('left', 0.3)}
-          initial='hidden'
-          whileInView='show'
-          viewport={{ once: false, amount: 0.3 }}
+        <div
           className={style.works}
         >
           <h2 className={`xsm-text ${style.subtitle}`} style={{ marginBottom: 'var(--space-7)' }}>
@@ -96,7 +88,7 @@ const Work = () => {
               )
             })
           }
-        </motion.div>
+        </div>
       </div>
     </section>
   )

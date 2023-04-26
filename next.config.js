@@ -7,5 +7,9 @@ const nextConfig = {
     localeDetection: false
   }
 }
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+  openAnalyzer: false
+})
 
-module.exports = nextConfig
+module.exports = withBundleAnalyzer(nextConfig)
