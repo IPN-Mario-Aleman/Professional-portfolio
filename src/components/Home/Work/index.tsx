@@ -1,3 +1,12 @@
+/* intersection observer hook */
+import { useInView } from 'react-intersection-observer'
+// motion
+import { motion } from 'framer-motion'
+// Animation
+import { fadeIn } from '@src/utils/variants'
+// Count Up
+import CountUp from 'react-countup'
+
 import style from './style.module.scss'
 
 const allJobs = [
@@ -39,7 +48,11 @@ const Work = () => {
           </div>
         </div>
         {/* all works */}
-        <div
+        <motion.div
+          initial={{ opacity: 0, x: 80 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 1 }}
           className={style.works}
         >
           <h2 className={`xsm-text ${style.subtitle}`} style={{ marginBottom: 'var(--space-7)' }}>
@@ -71,7 +84,7 @@ const Work = () => {
               )
             })
           }
-        </div>
+        </motion.div>
       </div>
     </section>
   )
