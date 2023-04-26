@@ -1,8 +1,3 @@
-/* intersection observer hook */
-import { useInView } from 'react-intersection-observer'
-// Count Up
-import CountUp from 'react-countup'
-
 import style from './style.module.scss'
 
 const allJobs = [
@@ -11,11 +6,8 @@ const allJobs = [
 ]
 
 const Work = () => {
-  const [ref, inView] = useInView({
-    threshold: 0.5
-  })
   return (
-    <section className={style.wrapp_works} ref={ref}>
+    <section className={style.wrapp_works}>
       <div className={`container ${style.wrapper}`}>
         <div className={style.research}>
           <div className={style.blob_1} />
@@ -25,29 +17,20 @@ const Work = () => {
           </h1>
           <div className={style.text_exp}>
             <div className={style.box}>
-              {
-                inView &&
-                  <CountUp start={0} end={2} duration={2} />
-              }
+              2
               <p>
                 Años de
                 experiencia
               </p>
             </div>
             <div className={style.box}>
-              {
-                inView &&
-                  <CountUp start={0} end={2} duration={2} />
-              }
+              2
               <p>
                 Empresas
               </p>
             </div>
             <div className={style.box}>
-              {
-                inView &&
-                  <CountUp start={0} end={15} duration={2} />
-              }
+              15
               +
               <p>
                 Proyectos
