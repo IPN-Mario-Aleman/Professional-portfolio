@@ -88,9 +88,9 @@ const Work = () => {
                         {`${data.start} ${data.finish}`}
                       </p>
                     </div>
-                    <div className={style.description}>
+                    <p className={style.description}>
                       {data.description}
-                    </div>
+                    </p>
                   </div>
                 </div>
               )

@@ -1,43 +1,43 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
-const useScrollDirection = () => {
-  const [scrollDirection, setScrollDirection] = useState<null | string>(null)
-  const [scrolled, setScrolled] = useState<boolean>(false)
+function useDebounce (value: boolean, delay: number) {
+  const [debouncedValue, setDebouncedValue] = useState<null | boolean>(null)
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedValue(value)
+    }, delay)
+    return () => {
+      clearTimeout(handler)
+    }
+  }, [value, delay])
+  return debouncedValue
+}
+
+const useScroll = () => {
+  const [animationScroll, setAnimationScroll] = useState(false)
+  const [scrolled, setScrolled] = useState<boolean | null>(false)
+  const debouncedScroll = useDebounce(animationScroll, 100)
+
+  const handleScroll = () => {
+    const offset = window.scrollY
+    if (offset > 100) {
+      setAnimationScroll(true)
+    } else {
+      setAnimationScroll(false)
+    }
+    requestAnimationFrame(handleScroll)
+  }
 
   useEffect(() => {
-    let lastScrollY = window.pageYOffset
+    requestAnimationFrame(handleScroll)
+  })
 
-    const updateScrollDirection = () => {
-      const scrollY = window.pageYOffset
-      const direction = scrollY > lastScrollY ? 'down' : 'up'
-      if (direction !== scrollDirection && (scrollY - lastScrollY > 10 || scrollY - lastScrollY < -10)) {
-        setScrollDirection(direction)
-      }
-      lastScrollY = scrollY > 0 ? scrollY : 0
-
-      if (scrollY > 100) {
-        setScrolled(true)
-      } else {
-        setScrolled(false)
-      }
-    }
-    // add event listener
-    // if (system.mobileSystem.length > 0) {
-    // }
-    window.addEventListener('touchmove', updateScrollDirection)
-
-    window.addEventListener('scroll', updateScrollDirection)
-
-    return () => {
-      window.removeEventListener('scroll', updateScrollDirection) // clean up
-      window.removeEventListener('touchmove', updateScrollDirection)
-    }
-  }, [scrollDirection])
+  useEffect(() => {
+    setScrolled(debouncedScroll)
+  }, [debouncedScroll])
 
   return {
-    scrollDirection,
     scrolled
   }
 }
-
-export default useScrollDirection
+export default useScroll

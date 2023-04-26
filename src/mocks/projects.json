@@ -64,6 +64,45 @@
             "subtitulo": "Calculadora del curso Meta",
             "preview": "none",
             "category": "React"
+        },
+        {
+            "id": 5,
+            "name": "Calculadora",
+            "url": "none",
+            "repo": "none",
+            "images": "/images/projects/simple_calculator.png",
+            "alt": "Calculator",
+            "description": "Esta calculadora realiza operaciones muy básicas como suma, resta, división y multiplicación utilizando los hooks de React.",
+            "background": "#020302",
+            "subtitulo": "Calculadora del curso Meta",
+            "preview": "none",
+            "category": "React"
+        },
+        {
+            "id": 6,
+            "name": "Calculadora",
+            "url": "none",
+            "repo": "none",
+            "images": "/images/projects/simple_calculator.png",
+            "alt": "Calculator",
+            "description": "Esta calculadora realiza operaciones muy básicas como suma, resta, división y multiplicación utilizando los hooks de React.",
+            "background": "#020302",
+            "subtitulo": "Calculadora del curso Meta",
+            "preview": "none",
+            "category": "React"
+        },
+        {
+            "id": 7,
+            "name": "Calculadora",
+            "url": "none",
+            "repo": "none",
+            "images": "/images/projects/simple_calculator.png",
+            "alt": "Calculator",
+            "description": "Esta calculadora realiza operaciones muy básicas como suma, resta, división y multiplicación utilizando los hooks de React.",
+            "background": "#020302",
+            "subtitulo": "Calculadora del curso Meta",
+            "preview": "none",
+            "category": "React"
         }
     ]
 }

@@ -82,7 +82,7 @@ const Header = () => {
         <div className={style.wrapper}>
           <div className={style.logo}>
             <Link href='/'>
-              <LogoAlt />
+              Inicio
             </Link>
           </div>
           <nav className={style.navigation}>

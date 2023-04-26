@@ -1,6 +1,7 @@
 @font-face {
   font-family: 'Anurati';
   src: url('/fonts/Anurati-Regular.otf');
+  font-display: swap;
 }
 
 :root {
@@ -30,6 +31,7 @@
   --accents-1: #fafafa;
 
   --gradients: linear-gradient(60deg, #101010, #595959);
+  --gradient-img-bottom: linear-gradient(to bottom, transparent, #fdfdfd 75%);
   
   --max-width: 1200px;
   --border-radius: 12px;
@@ -54,6 +56,7 @@
   
   /* color text gradients */
   --gradient-title: -webkit-linear-gradient(180deg, #ffffff, #ededed);
+  --gradient-img-bottom: linear-gradient(to bottom, transparent, #111219 70%);
 
   /* Texts colors */
   --accents-8: #fafafa;
@@ -82,6 +85,7 @@ body {
 body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background));
+  overflow-x: hidden;
 }
 
 a {

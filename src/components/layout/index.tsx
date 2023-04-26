@@ -10,7 +10,7 @@ const Layout = ({ children }: props) => {
   return (
     <>
       <Header />
-      <main>{children}</main>
+      <main style={{ overflowX: 'hidden' }}>{children}</main>
       <Footer />
     </>
   )
