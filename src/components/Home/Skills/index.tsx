@@ -1,6 +1,7 @@
 import style from './skills.module.scss'
 import { NextJs, Css3, JavaScript, React, TypeScript, Vite, VsCode } from '@src/components/icons'
 import { GitHub, HTML5 } from '@src/components/icons/IconsSkills'
+import { useBookStore } from '@src/store/bookStore'
 
 const skillsInfo = [
   {
@@ -51,6 +52,11 @@ const skillsInfo = [
 ]
 
 const Skills = () => {
+  const updatePopUp = useBookStore(state => state.updatePopUp)
+  const openPopUp = () => {
+    document.body.style.overflow = 'inherit'
+    updatePopUp(true, '')
+  }
   return (
     <section className='container'>
       <div className={style.skill_wrapper}>
@@ -63,7 +69,7 @@ const Skills = () => {
                     {data.name}
                   </h1>
                 </div>
-                <div className={style.icons}>
+                <div className={style.icons} onClick={() => openPopUp()}>
                   {
                     data.icon
                   }

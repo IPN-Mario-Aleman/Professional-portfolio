@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
-// import Showcase from '@src/components/Home/Showcase'
 const Layout = dynamic(() => import('@src/components/layout'))
 
 const Work = dynamic(() => import('@src/components/Home/Work'))
@@ -27,7 +26,6 @@ export default function Home () {
         <Skills />
         <Work />
         <Showcase />
-        {/* <LastProject /> */}
         <CertificatePopUp />
       </Layout>
     </>

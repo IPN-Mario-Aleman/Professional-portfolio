@@ -1,11 +1,8 @@
 /* intersection observer hook */
-import { useInView } from 'react-intersection-observer'
 // motion
 import { motion } from 'framer-motion'
 // Animation
-import { fadeIn } from '@src/utils/variants'
 // Count Up
-import CountUp from 'react-countup'
 
 import style from './style.module.scss'
 
@@ -18,7 +15,12 @@ const Work = () => {
   return (
     <section className={style.wrapp_works}>
       <div className={`container ${style.wrapper}`}>
-        <div className={style.research}>
+        <motion.div
+          className={style.research} initial={{ opacity: 0, x: -80 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.8 }}
+        >
           <div className={style.blob_1} />
           <div className={style.blob_2} />
           <h1 className={`xbg-text ${style.gradient}`} style={{ textAlign: 'center' }}>
@@ -46,13 +48,13 @@ const Work = () => {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
         {/* all works */}
         <motion.div
           initial={{ opacity: 0, x: 80 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: false }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 0.8 }}
           className={style.works}
         >
           <h2 className={`xsm-text ${style.subtitle}`} style={{ marginBottom: 'var(--space-7)' }}>
@@ -76,6 +78,7 @@ const Work = () => {
                         {`${data.start} ${data.finish}`}
                       </p>
                     </div>
+                    <p>{data.job}</p>
                     <p className={style.description}>
                       {data.description}
                     </p>

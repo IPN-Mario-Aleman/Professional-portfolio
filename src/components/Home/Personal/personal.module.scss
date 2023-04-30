@@ -6,8 +6,8 @@
 }
 
 .title {
-    margin-bottom: 40px;
-    font-family: 'Space Mono', monospace;
+    margin-top: 40px;
+    font-family: var(--font-mono);
     letter-spacing: 2px;
     text-align: center;
     background: var(--gradient-title);

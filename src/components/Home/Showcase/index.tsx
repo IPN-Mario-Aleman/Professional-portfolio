@@ -1,10 +1,18 @@
 import Image from 'next/image'
 import style from './showcase.module.scss'
+import { motion } from 'framer-motion'
+import { matrixLetter } from '@src/utils/letter-transition'
 
 const Showcase = () => {
   return (
     <section className={style.sc_container}>
-      <h1 className={`${style.title} xbg-text`}>Project Showcase</h1>
+      <motion.h1
+        className={`${style.title} xbg-text`}
+        data-value='PROJECT SHOWCASE'
+        onViewportEnter={(e) => matrixLetter(e)}
+      >
+        PROJECT SHOWCASE
+      </motion.h1>
       <div className={style.grid_wrapper}>
         <div>
           <Image src='/images/projects/giffy_project.png' alt='Masonry showcase project' quality={100} width={450} height={350} />

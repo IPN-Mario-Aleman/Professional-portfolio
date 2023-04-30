@@ -85,6 +85,8 @@
 }
 
 .title {
+    font-family: var(--font-mono);
+    letter-spacing: 2px;
     background-image: var(--gradients);
     background-clip: text;
     color: transparent;
