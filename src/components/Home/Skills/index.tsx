@@ -1,6 +1,6 @@
 import style from './skills.module.scss'
 import { NextJs, Css3, JavaScript, React, TypeScript, Vite, VsCode, GraphQl, Python, Redux, Django } from '@src/components/icons'
-import { GitHub, HTML5 } from '@src/components/icons/IconsSkills'
+import { ApolloGQL, GitHub, HTML5 } from '@src/components/icons/IconsSkills'
 import { useBookStore } from '@src/store/bookStore'
 
 const skillsInfo = [
@@ -35,9 +35,14 @@ const skillsInfo = [
     icon: <Django />
   },
   {
-    percentage: '70%',
+    percentage: '40%',
     name: 'GraphQL',
     icon: <GraphQl />
+  },
+  {
+    percentage: '70%',
+    name: 'Apollo GraphQL',
+    icon: <ApolloGQL />
   },
   {
     percentage: '30%',
