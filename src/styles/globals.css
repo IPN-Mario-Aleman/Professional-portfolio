@@ -13,8 +13,10 @@
   --icons: invert(0);
   /* themes on sections cards */
   --background-wrap: linear-gradient(207deg, rgb(246, 251, 255) 0%, rgb(232, 232, 232) 100%);
+  --container-bg: linear-gradient(45deg, #efefef, #f3f3f3);
   --card-info-back: rgb(213, 213, 213);
-  --border-light: 227, 227, 227;
+  --border: 0, 0, 0, 0.333;
+  --border-hover: rgba(0, 0, 0, 0.636);
   --bg-small: 243 246 247;
 
   /* color text gradients */
@@ -50,8 +52,10 @@
   --icons: invert(0);
   /* themes on sections cards */
   --background-wrap: linear-gradient(207deg, rgb(46, 48, 49) 0%, rgb(29, 29, 29) 100%);
+  --container-bg: linear-gradient(45deg, #040404, #2c2c2c);
   --card-info-back: rgb(57, 57, 57);
-  --border-light: 43, 43, 43;
+  --border: 73, 73, 73;
+  --border-hover: rgb(255, 255, 255, .5);
   --bg-small: 46, 48, 49;
   
   /* color text gradients */

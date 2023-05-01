@@ -1,5 +1,5 @@
 import style from './skills.module.scss'
-import { NextJs, Css3, JavaScript, React, TypeScript, Vite, VsCode } from '@src/components/icons'
+import { NextJs, Css3, JavaScript, React, TypeScript, Vite, VsCode, GraphQl, Python, Redux, Django } from '@src/components/icons'
 import { GitHub, HTML5 } from '@src/components/icons/IconsSkills'
 import { useBookStore } from '@src/store/bookStore'
 
@@ -23,6 +23,26 @@ const skillsInfo = [
     percentage: '50%',
     name: 'TypeScript',
     icon: <TypeScript />
+  },
+  {
+    percentage: '50%',
+    name: 'Python',
+    icon: <Python />
+  },
+  {
+    percentage: '40%',
+    name: 'Django',
+    icon: <Django />
+  },
+  {
+    percentage: '70%',
+    name: 'GraphQL',
+    icon: <GraphQl />
+  },
+  {
+    percentage: '30%',
+    name: 'Redux',
+    icon: <Redux />
   },
   {
     percentage: '80%',
@@ -53,10 +73,6 @@ const skillsInfo = [
 
 const Skills = () => {
   const updatePopUp = useBookStore(state => state.updatePopUp)
-  const openPopUp = () => {
-    document.body.style.overflow = 'inherit'
-    updatePopUp(true, '')
-  }
   return (
     <section className='container'>
       <div className={style.skill_wrapper}>
@@ -69,7 +85,7 @@ const Skills = () => {
                     {data.name}
                   </h1>
                 </div>
-                <div className={style.icons} onClick={() => openPopUp()}>
+                <div className={style.icons} onClick={() => updatePopUp(true, '', data.name, data.name, data.name)}>
                   {
                     data.icon
                   }

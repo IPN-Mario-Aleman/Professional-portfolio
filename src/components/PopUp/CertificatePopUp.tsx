@@ -7,6 +7,9 @@ import style from './certificate.module.scss'
 
 const CertificatePopUp = () => {
   const img = useBookStore(state => state.img)
+  const title = useBookStore(state => state.title)
+  const data = useBookStore(state => state.data)
+  const info = useBookStore(state => state.info)
   const popUp = useBookStore(state => state.popUp)
   const updatePopUp = useBookStore(state => state.updatePopUp)
 
@@ -18,7 +21,7 @@ const CertificatePopUp = () => {
 
   const closePopUp = () => {
     document.body.style.overflow = 'inherit'
-    updatePopUp(false, '')
+    updatePopUp(false, '', '', '', '')
   }
 
   return (
@@ -30,7 +33,7 @@ const CertificatePopUp = () => {
             <motion.div className={style.popup_container}>
               <motion.div className={style.close_section}>
                 <h1 className='xsm-text'>
-                  Certifications
+                  {title}
                 </h1>
                 <motion.div className={style.closeBtn} onClick={() => closePopUp()}>
                   <Close />
@@ -45,6 +48,8 @@ const CertificatePopUp = () => {
                   alt='certificate'
                   quality={100}
                 />
+                <h2>{data}</h2>
+                <p>{info}</p>
               </motion.div>
             </motion.div>
           </motion.div>
