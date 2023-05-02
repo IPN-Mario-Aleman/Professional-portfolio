@@ -18,8 +18,10 @@ const AboutMe = ({ selectedTab, setSelectedTab }: TabControls) => {
     <div className={style.letter}>
       <div className={style.content}>
         <div className={style.description}>
-          Hola mi nombre es Mario Alemán, soy desarrollador Frontend, me gustan los videojuegos y la programacion.
-          Experiencia en JavaScript, TypeScript, Python.
+          <p>
+            Hola mi nombre es Mario Alemán, soy desarrollador Frontend, me gustan los videojuegos y la programacion.
+            Experiencia en JavaScript, TypeScript y Python.
+          </p>
         </div>
         <div className={style.info_personal}>
           <ul>
@@ -30,13 +32,16 @@ const AboutMe = ({ selectedTab, setSelectedTab }: TabControls) => {
               Interesado en aprender Inteligencia Artificial relacionado al DL/ML.
             </li>
             <li className={style.list}>
-              Fui Platino V en LoL.
+              Fui Platino V en LoL (Yo carreo 🙂👍).
             </li>
             <li className={style.list}>
               Me gusta cualquier tipo de música pero no las fiestas.
             </li>
             <li className={style.list}>
-              Practiaba karate y boxeo pero no dure mas de 1 mes.
+              Practiaba karate y boxeo.
+            </li>
+            <li className={style.list}>
+              Tengo certificado de primeros auxilios (Podría salvarte la vida 🙂👍).
             </li>
             <li className={style.list}>
               03/07/1997 | Veracruz, México
@@ -45,39 +50,40 @@ const AboutMe = ({ selectedTab, setSelectedTab }: TabControls) => {
         </div>
 
         <div className={style.language}>
-          <h1 className='sm-text'>
-            Lenguajes:
-          </h1>
-
-          Español nativo
-
+          <h2 className={`sm-text ${style.subtitle}`}>
+            Idiomas:
+          </h2>
+          <p>
+            Español (nativo)
+          </p>
           <div className={style.english}>
-            Inglés
-            <Star />
-            <Star />
-            <Star />
-            <Star />
-            <Star />
+            <p>
+              Inglés
+            </p>
+            <Star color />
+            <Star color />
+            <Star color />
+            <Star color={false} />
+            <Star color={false} />
           </div>
         </div>
       </div>
       <nav className={style.nav}>
         <ul className={style.ul}>
           {tabs.map((item) => (
-            <motion.button
-              key={item.label}
+            <motion.div
               className={`${style.btn_control} ${item === selectedTab ? style.selected : ''}`}
               onClick={() => setSelectedTab(item)}
+              key={item.label}
             >
-              {`${item.label}`}
-              <svg xmlns='http://www.w3.org/2000/svg' className='icon icon-tabler icon-tabler-arrow-bar-to-right' width='24' height='24' viewBox='0 0 24 24' strokeWidth='2' stroke='currentColor' fill='none' strokeLinecap='round' strokeLinejoin='round'>
+              <p>Next</p>
+              <svg
+                xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 24 24' strokeWidth='2' stroke='currentColor' fill='none' strokeLinecap='round' strokeLinejoin='round'
+              >
                 <path stroke='none' d='M0 0h24v24H0z' fill='none' />
-                <path d='M14 12l-10 0' />
-                <path d='M14 12l-4 4' />
-                <path d='M14 12l-4 -4' />
-                <path d='M20 4l0 16' />
+                <path d='M9 6l6 6l-6 6' />
               </svg>
-            </motion.button>
+            </motion.div>
           ))}
         </ul>
       </nav>

@@ -3,6 +3,9 @@ import profile from '@public/images/profile_img.webp'
 import style from './tab_content.module.scss'
 import { initialTabs as tabs } from '../Tabs/tabs'
 import { motion } from 'framer-motion'
+import { Copy } from '@src/components/icons/CopyIcon'
+import { CopyToClipboard } from '@src/utils/copyToClipboar'
+import { useNotification } from '@src/store/notificationStore'
 
 export interface Tabs {
     icon: string;
@@ -15,6 +18,13 @@ type TabControls = {
 }
 
 const ContactMe = ({ selectedTab, setSelectedTab }: TabControls) => {
+  const updateVisible = useNotification(state => state.updateVisible)
+
+  const handleCopy = (text: string, message: string) => {
+    CopyToClipboard({ text })
+    updateVisible(true, message)
+  }
+
   return (
     <div className={style.letter}>
       <div className={style.avatar_wrapper}>
@@ -27,7 +37,12 @@ const ContactMe = ({ selectedTab, setSelectedTab }: TabControls) => {
             <path d='M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z' />
             <path d='M3 7l9 6l9 -6' />
           </svg>
-          mar.alemanf@gmail.com
+          <p>
+            mar.alemanf@gmail.com
+          </p>
+          <div className={style.copy} data-tooltip='Copy to Clipboard' data-position='right' onClick={() => handleCopy('mar.alemanf@gmail.com', '¡Email copiado con éxito!')}>
+            <Copy />
+          </div>
         </div>
         <div className={style.phone_wrapper}>
           <svg xmlns='http:www.w3.org/2000/svg' className={`${style.icon} icon-tabler icon-tabler-device-mobile`} width='24' height='24' viewBox='0 0 24 24' strokeWidth='2' stroke='currentColor' fill='none' strokeLinecap='round' strokeLinejoin='round'>
@@ -49,6 +64,9 @@ const ContactMe = ({ selectedTab, setSelectedTab }: TabControls) => {
         </p>
         <p>
           Discord: FallDestiny#9231
+          <div className={style.copy} data-tooltip='Copy to Clipboard' data-position='right' onClick={() => handleCopy('FallDestiny#9231', '¡Username copiado con éxito!')}>
+            <Copy />
+          </div>
         </p>
       </div>
       <div className={style.curriculum}>
@@ -66,20 +84,19 @@ const ContactMe = ({ selectedTab, setSelectedTab }: TabControls) => {
       <nav className={style.nav}>
         <ul className={style.ul}>
           {tabs.map((item) => (
-            <motion.button
-              key={item.label}
+            <motion.div
               className={`${style.btn_control} ${item === selectedTab ? style.selected : ''}`}
               onClick={() => setSelectedTab(item)}
+              key={item.label}
             >
-              {`${item.label}`}
-              <svg xmlns='http://www.w3.org/2000/svg' className='icon icon-tabler icon-tabler-arrow-bar-to-right' width='24' height='24' viewBox='0 0 24 24' strokeWidth='2' stroke='currentColor' fill='none' strokeLinecap='round' strokeLinejoin='round'>
+              <p>Next</p>
+              <svg
+                xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 24 24' strokeWidth='2' stroke='currentColor' fill='none' strokeLinecap='round' strokeLinejoin='round'
+              >
                 <path stroke='none' d='M0 0h24v24H0z' fill='none' />
-                <path d='M14 12l-10 0' />
-                <path d='M14 12l-4 4' />
-                <path d='M14 12l-4 -4' />
-                <path d='M20 4l0 16' />
+                <path d='M9 6l6 6l-6 6' />
               </svg>
-            </motion.button>
+            </motion.div>
           ))}
         </ul>
       </nav>

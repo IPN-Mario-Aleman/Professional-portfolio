@@ -38,7 +38,7 @@ const Footer = () => {
           }
         </div>
         <p className={style.last_update}>
-          Última actualización: 16 de Abril de 2023
+          Última actualización: 01 de Mayo de 2023
         </p>
       </div>
     </footer>

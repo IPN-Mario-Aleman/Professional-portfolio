@@ -9,6 +9,7 @@ const Personal = dynamic(() => import('@src/components/Home/Personal'))
 const Banner = dynamic(() => import('@src/components/Banner'))
 const Skills = dynamic(() => import('@src/components/Home/Skills'))
 const CertificatePopUp = dynamic(() => import('@src/components/PopUp/CertificatePopUp'))
+const Notification = dynamic(() => import('@src/components/PopUp/Notification'))
 
 export default function Home () {
   return (
@@ -27,6 +28,7 @@ export default function Home () {
         <Work />
         <Showcase />
         <CertificatePopUp />
+        <Notification />
       </Layout>
     </>
   )

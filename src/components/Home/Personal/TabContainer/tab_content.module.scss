@@ -18,14 +18,25 @@
 
 .contact_info {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
-    justify-content: center;
-    margin-bottom: 16px;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    justify-content: space-between;
+    margin: 16px 0;
 }
 
-.icon {
-    margin-right: 6px;
+.email_wrapper > p {
+    margin: 0 3px;
+}
+
+.copy {
+    background: rgb(var(--acent-blue-color));
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
 }
 
 .email_wrapper {
@@ -87,13 +98,11 @@
 /*
   on li hover make paper fold larger
 */
-.letter:hover:before {
+.letter:has(.btn_control:hover):before
+{
   border-width: 0 100px 100px 0;
   border-color: #ddd rgb(157, 157, 157);
 }
-
-
-/* About Me */
 
 .list::before {
   content: '✦';
@@ -112,16 +121,49 @@
 }
 
 .btn_control {
-    background: rgb(var(--blue-rgb));
     display: flex;
     align-items: center;
-    padding: 14px 8px;
+    color: #000;
+    cursor: pointer;
 }
 
 .btn_control:hover {
-    background: rgb(var(--acent-blue-color));
+    color: rgba(0, 0, 0, 0.693);
+}
+
+.btn_control:hover > p {
+    color: rgba(0, 0, 0, 0.693);
 }
 
 .selected {
     display: none;
+}
+
+/* About Me */
+.description {
+    margin-bottom: 10px;
+}
+
+.info_personal {
+    margin-bottom: 10px;
+}
+
+.info_personal > ul > li:not(li:last-child) {
+    margin-bottom: 3px;
+}
+
+.subtitle {
+    color: rgb(19, 19, 26);
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.english {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.english > p {
+    margin-right: 5px;
 }

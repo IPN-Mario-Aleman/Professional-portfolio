@@ -1,0 +1,54 @@
+.notification {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    right: 0;
+    width: max-content;
+    padding: 20px 15px;
+    border-radius: 4px;
+    background-color: var(--card-info-back);
+    color: rgb(var(--foreground-rgb));
+    box-shadow: 0 1px 10px rgba(0, 0, 0, .1);
+    transform: translateY(-30px);
+    opacity: 0;
+    visibility: hidden;
+    margin: 0 auto;
+    z-index: 20;
+}
+
+.animation {
+    animation: fade-in 4s linear forwards;
+}
+
+.notification_progrss {
+    position: fixed;
+    left: 5px;
+    bottom: 5px;
+    width: calc(100% - 10px);
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: left;
+    background-image: linear-gradient(
+        to right, #539bdb, #3250bf 
+    );
+    border-radius: inherit;
+    animation: load 3s 0.25s linear forwards;
+}
+
+@keyframes fade-in {
+    5% {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    90% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes load {
+    to {
+        transform: scaleX(1);
+    }    
+}
